@@ -1,7 +1,6 @@
-7ed214abfa9a41eb08971db2867eca6a init-application.sh
+ed5f76033ab09fc60b4e40f869cf53dd init-application.sh
 25056f761db53276a3d0315925b72e26 init-proxy.sh
-cff64f2260970ca00cb90858d8d84b10 init-zsh.sh
+5304918684aa53349d87a050fdbe9717 init-zsh.sh
 d185bea8cb45fda1fb5feadecd4ed332 init.sh
 b2e72b337977f08284810e3a2e0c592e verifier.sh
-2c35bb875d6ed09e3134f4380fd3f5e7 README.md
-57fa460e14835bd2c8bba10460e548fd philoso.zsh-theme
+a32de087565e5a52d2db59bddc3b5c93 README.md

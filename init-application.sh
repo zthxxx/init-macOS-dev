@@ -5,12 +5,12 @@ local runtime_environment=(
 )
 
 local terminal_tool=(
-    # zsh
+    zsh
     md5sha1sum  autojump
 )
 
 local network_tool=(
-    # git curl wget proxychains-ng 
+    git curl wget proxychains-ng 
 )
 
 local terminal_app=(
@@ -18,7 +18,7 @@ local terminal_app=(
 )
 
 local network_app=(
-    # shadowsocksx-ng
+    shadowsocksx-ng
     google-chrome   telegram
 )
 
@@ -30,6 +30,10 @@ local editor_IDE_app=(
 local version_control_app=(
     sourcetree  tower
 )
+
+local dev_utils={
+    dash
+}
 
 local system_helper_service_app=(
     # magnet
@@ -50,5 +54,5 @@ local office_app=(
 brew install ${runtime_environment[@]} ${terminal_tools[@]} ${network_tool[@]}
 
 brew cask install ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
-${version_control_app[@]} ${system_helper_service_app[@]} \
+${version_control_app[@]} ${system_helper_service_app[@]} ${dev_utils}\
 ${media_entertainment_app[@]} ${office_app[@]}

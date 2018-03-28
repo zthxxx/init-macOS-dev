@@ -7,10 +7,10 @@ init my macOS development environment
 download and install applications for custom
 
 
-# usage
+## usage
 
 ```bash
-curl -sL git.io/InitMacDev | bash
+curl -sSL git.io/InitMacDev | bash
 ```
 
 
