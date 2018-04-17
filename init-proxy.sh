@@ -8,6 +8,6 @@ if [ -r ~/Documents/Shadowconfig/ssx-ng-config.plist ]; then
     nohup /Applications/ShadowsocksX-NG.app/Contents/MacOS/ShadowsocksX-NG &> /dev/null &
 fi
 
-sed -i '/socks4 	127.0.0.1/d' /usr/local/etc/proxychains.conf
-sed -i '/socks5 	127.0.0.1/d' /usr/local/etc/proxychains.conf
+sed "-i" '/socks4 	127.0.0.1/d' /usr/local/etc/proxychains.conf
+sed "-i" '/socks5 	127.0.0.1/d' /usr/local/etc/proxychains.conf
 echo "socks5 	127.0.0.1 1080" >> /usr/local/etc/proxychains.conf

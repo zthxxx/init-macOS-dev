@@ -1,6 +1,8 @@
-ed5f76033ab09fc60b4e40f869cf53dd init-application.sh
-25056f761db53276a3d0315925b72e26 init-proxy.sh
-5304918684aa53349d87a050fdbe9717 init-zsh.sh
-d185bea8cb45fda1fb5feadecd4ed332 init.sh
+6da8429058d03c07dbc424c864525978 init-application.sh
+fcc3c09b407795a30356c1e0327c8b58 init-proxy.sh
+bbd6a1bc5ef980835c1d09cd17904e6f init-sys-preference.sh
+0dc32da7d3dcfcb3a1488d52dbb57e72 init-zsh.sh
+a77c90518f6a231a7a5c2dca4b3bea1f init.sh
+e39a0e8c33f49df9b7904880b2d3c221 template-substitution.sh
 b2e72b337977f08284810e3a2e0c592e verifier.sh
-a32de087565e5a52d2db59bddc3b5c93 README.md
+8ee2b1af21a7b2d121eec825d4a42b15 specific-UTIs-for-app.template

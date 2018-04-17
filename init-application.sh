@@ -1,7 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 local runtime_environment=(
     python  node
+)
+
+local sys_pref_tool=(
+    mas duti
+    mackup
 )
 
 local terminal_tool=(
@@ -15,9 +20,8 @@ local network_tool=(
 
 local database_service=(
     mysql   mongodb redis
-    navicat-premium
-    robo-3t
 )
+
 
 local terminal_app=(
     iterm2  hyper
@@ -26,6 +30,11 @@ local terminal_app=(
 local network_app=(
     shadowsocksx-ng
     google-chrome   telegram
+)
+
+local databse_manager=(
+    robo-3t
+    navicat-premium
 )
 
 local editor_IDE_app=(
@@ -37,16 +46,27 @@ local version_control_app=(
     sourcetree  tower
 )
 
-local dev_utils_app={
+local dev_utils_app=(
     dash    cheatsheet
     docker  kitematic
-}
+)
 
 local system_helper_service_app=(
     # magnet
     scroll-reverser
     alfred  istat-menus
     dropbox
+)
+
+local quicklook_plugins=(
+    qlvideo
+    qlstephen
+    qlmarkdown
+    qlcolorcode
+    qlprettypatch
+    quicklook-csv
+    webpquicklook
+    quicklook-json
 )
 
 local media_entertainment_app=(
@@ -63,12 +83,19 @@ local adobe=(
     # adobe-photoshop-cc
 )
 
+local mas_only_app=(
+    441258766   # Magnet
+    1176895641  # Spark
+)
 
-brew install ${runtime_environment[@]} ${terminal_tools[@]} ${network_tool[@]} ${database_service[@]}
+brew install ${runtime_environment[@]} ${sys_pref_tool[@]} ${terminal_tools[@]} \
+    ${network_tool[@]} ${database_service[@]}
 
-brew cask install ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
-${version_control_app[@]} ${system_helper_service_app[@]} ${dev_utils_app}\
-${media_entertainment_app[@]} ${office_app[@]} ${adobe[@]}
+brew cask install ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
+    ${version_control_app[@]} ${system_helper_service_app[@]} ${quicklook_plugins[@]} \
+    ${dev_utils_app} ${media_entertainment_app[@]} ${office_app[@]} ${adobe[@]} 
+
+mas install ${mas_only_app[@]}
 
 # To complete the installation of Cask adobe-creative-cloud, you must also run the installer at
 /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app/Contents/MacOS/Install
