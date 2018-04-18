@@ -7,6 +7,8 @@ preference_dock() {
     defaults write com.apple.dock showhidden -bool true
     defaults write com.apple.dock mineffect suck
     defaults write com.apple.dock mouse-over-hilite-stack -bool true
+    defaults write com.apple.dock autohide -bool true
+    defaults write com.apple.dock autohide-delay -int 0
     killall Dock
 }
 

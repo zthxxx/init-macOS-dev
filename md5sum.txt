@@ -1,6 +1,6 @@
-6da8429058d03c07dbc424c864525978 init-application.sh
+41f53d60a57fbaec021f2bd68dabf0a1 init-application.sh
 fcc3c09b407795a30356c1e0327c8b58 init-proxy.sh
-bbd6a1bc5ef980835c1d09cd17904e6f init-sys-preference.sh
+5844fec98dfde6b737aabbb03322e83f init-sys-preference.sh
 0dc32da7d3dcfcb3a1488d52dbb57e72 init-zsh.sh
 a77c90518f6a231a7a5c2dca4b3bea1f init.sh
 e39a0e8c33f49df9b7904880b2d3c221 template-substitution.sh

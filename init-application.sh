@@ -99,3 +99,10 @@ mas install ${mas_only_app[@]}
 
 # To complete the installation of Cask adobe-creative-cloud, you must also run the installer at
 /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app/Contents/MacOS/Install
+
+# mackup setting: https://github.com/lra/mackup/blob/master/doc/README.md#icloud
+cat > ~/.mackup.cfg <<-EOF
+[storage]
+engine = icloud
+EOF
+
