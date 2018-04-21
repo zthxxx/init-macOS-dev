@@ -15,7 +15,8 @@ local network_tool=(
 
 local database_service=(
     mysql   mongodb redis
-    # studo-3T
+    navicat-premium
+    robo-3t
 )
 
 local terminal_app=(
@@ -57,9 +58,17 @@ local office_app=(
     microsoft-office
 )
 
+local adobe=(
+    adobe-creative-cloud
+    # adobe-photoshop-cc
+)
+
 
 brew install ${runtime_environment[@]} ${terminal_tools[@]} ${network_tool[@]} ${database_service[@]}
 
 brew cask install ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
 ${version_control_app[@]} ${system_helper_service_app[@]} ${dev_utils_app}\
-${media_entertainment_app[@]} ${office_app[@]}
+${media_entertainment_app[@]} ${office_app[@]} ${adobe[@]}
+
+# To complete the installation of Cask adobe-creative-cloud, you must also run the installer at
+/usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app/Contents/MacOS/Install
