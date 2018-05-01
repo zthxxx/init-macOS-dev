@@ -15,6 +15,8 @@ cp ./app-preferences/mackup.cfg  ~/.mackup.cfg
 # aria2 config: https://aria2.github.io/manual/en/html/aria2c.html#aria2-conf
 mkdir -p ~/.aria2
 cp ./app-preferences/aria2.conf  ~/.aria2/aria2.conf
+local bt_tracker=`curl -sSL https://github.com/ngosang/trackerslist/raw/master/trackers_all.txt | sed ':n;N;$!bn;s/\n\+/,/g'`
+sed "-i" "s#^bt-tracker=.*#bt-tracker=${bt_tracker}#g" ~/.aria2/aria2.conf
 
 # vscode user preference
 cp ./app-preferences/vscode.json ~/Library/Application\ Support/Code/User/settings.json

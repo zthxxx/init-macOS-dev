@@ -6,3 +6,4 @@ ruby -e "$(curl -fsSL git.io/brew-install)"
 . ./init-proxy.sh
 zsh init-application.sh
 zsh init-sys-preference.sh
+zsh init-app-preference.sh
