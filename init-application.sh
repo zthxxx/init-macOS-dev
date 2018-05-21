@@ -1,12 +1,13 @@
 #!/usr/bin/env zsh
 
 local runtime_environment=(
-    python  node
+    python  ipython
+    node
 )
 
 local sys_pref_tool=(
     mas duti
-    mackup
+    mackup  pandoc
 )
 
 local terminal_tool=(
