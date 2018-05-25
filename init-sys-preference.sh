@@ -12,6 +12,8 @@ preference.dock() {
     defaults write com.apple.dock mouse-over-hilite-stack -bool true
     defaults write com.apple.dock autohide -bool true
     defaults write com.apple.dock autohide-delay -int 0
+    # https://www.defaults-write.com/disable-dashboard-in-mac-os-x
+    defaults write com.apple.dashboard mcx-disabled -bool true
     killall Dock
 }
 

@@ -1,12 +1,14 @@
-61edacd33208e71bf85e7578ea07bdb4 init-app-preference.sh
-16736122f0454bcb033ad12d8f50f715 init-application.sh
+f068880cc656206b436031db9d24a147 init-app-preference.sh
+79576efb76ac768586f330537d1e022c init-application.sh
 ea1ec874df7a57abdf6b39650fd3efc7 init-proxy.sh
-156b531810de487f69a20cd059fc19e2 init-sys-preference.sh
+727a3eb73236016f54babfb10ac0c278 init-sys-preference.sh
 0dc32da7d3dcfcb3a1488d52dbb57e72 init-zsh.sh
 ccc38b5b324d4cc9a842eee7d24ec877 init.sh
 5112aa4927c7b1232c40fe2b7ab5b2eb template-render.sh
 fdf989b0a639d13d3f61e82a0dd596a5 verifier.sh
 7e6d5e32fa831cc077c9062786829ebb specific-UTIs-for-app.template
+8511d887028de00172302335201b1c6e app-preferences/Spotlight.alfredappearance
 b714940e9676fa90f0a28360df8e9eea app-preferences/aria2.conf
 cf8681e773ad533fdfcd2a4bc9d07c4b app-preferences/mackup.cfg
+80e074f56914c5d11d44909647e6f2d1 app-preferences/pip.conf
 020d0d5a2f32eb05e5a26fdd97e06c05 app-preferences/vscode.json

@@ -12,6 +12,12 @@ fi
 # mackup setting: https://github.com/lra/mackup/blob/master/doc/README.md#icloud
 cp ./app-preferences/mackup.cfg  ~/.mackup.cfg
 
+# pip config
+cp ./app-preferences/pip.conf ~/.pip/pip.conf
+
+# node yarn config
+cp ./app-preferences/.yarnrc ~/.yarnrc
+
 # aria2 config: https://aria2.github.io/manual/en/html/aria2c.html#aria2-conf
 mkdir -p ~/.aria2
 cp ./app-preferences/aria2.conf  ~/.aria2/aria2.conf
