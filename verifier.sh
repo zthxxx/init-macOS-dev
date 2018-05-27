@@ -5,35 +5,35 @@ local PROJECT_NAME="init-macOS-dev"
 local HASH_FILE="md5sum.txt"
 local SOURCE_URL="https://github.com/zthxxx/${PROJECT_NAME}/raw/master/"
 
-iscommand() { command -v "$1" > /dev/null; }
+is_command() { command -v $@ &> /dev/null; }
 
 download() {
   local file="$1"
-  if ! curl -sSL "${SOURCE_URL}${file}" -o "$file"; then
+  if ! curl -sSL "${SOURCE_URL}${file}" -o "$file" --create-dirs; then
     exit 1
   fi
 }
 
 exist_check() {
   local file="$1"
-  if [ ! -r "$file" ]; then
+  if [[ ! -r "$file" ]]; then
     download "$file"
   fi
 }
 
 integrity_verifier() {
   exist_check "$HASH_FILE"
-  if iscommand md5sum; then
+  if is_command md5sum; then
     if ! md5sum --quiet -c "$HASH_FILE"; then 
       exit 1
     fi
-  elif iscommand md5; then
+  elif is_command md5; then
     local files=(`awk '{print $2}' "$HASH_FILE"`)
     local sums=(`awk '{print $1}' "$HASH_FILE"`)
     local index=0
     for file in "${files[@]}"; do
       local sum=`openssl md5 -r "$file" | awk '{print $1}'`
-      if [ "$sum" != "${sums[$index]}" ]; then
+      if [[ "$sum" != "${sums[$index]}" ]]; then
         exit 1
       fi
       let index++
@@ -56,7 +56,7 @@ download_files() {
 }
 
 verify() {
-  if iscommand git; then 
+  if is_command git; then 
     git clone "https://github.com/zthxxx/${PROJECT_NAME}.git"
     cd "$PROJECT_NAME"
   else

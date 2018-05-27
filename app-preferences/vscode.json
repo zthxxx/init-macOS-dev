@@ -1,0 +1,11 @@
+{
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false,
+    "window.title": "${activeEditorLong}${separator}${rootName}",
+    "workbench.editor.enablePreview": false,
+    "window.openFoldersInNewWindow": "on",
+    "window.zoomLevel": 0,
+    "explorer.confirmDelete": false,
+    "window.newWindowDimensions": "inherit",
+    "explorer.confirmDragAndDrop": false
+}

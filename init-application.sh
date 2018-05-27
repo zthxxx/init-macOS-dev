@@ -10,12 +10,13 @@ local sys_pref_tool=(
 )
 
 local terminal_tool=(
-    zsh
+    zsh     gnu-sed
     md5sha1sum  autojump
 )
 
 local network_tool=(
-    git curl wget proxychains-ng 
+    git curl wget aria2
+    proxychains-ng
 )
 
 local database_service=(
@@ -52,7 +53,6 @@ local dev_utils_app=(
 )
 
 local system_helper_service_app=(
-    # magnet
     scroll-reverser
     alfred  istat-menus
     dropbox
@@ -74,13 +74,13 @@ local media_entertainment_app=(
 )
 
 local office_app=(
-    # spark
     microsoft-office
 )
 
 local adobe=(
     adobe-creative-cloud
     # adobe-photoshop-cc
+    clip-studio-paint
 )
 
 local mas_only_app=(
@@ -88,21 +88,11 @@ local mas_only_app=(
     1176895641  # Spark
 )
 
-brew install ${runtime_environment[@]} ${sys_pref_tool[@]} ${terminal_tools[@]} \
-    ${network_tool[@]} ${database_service[@]}
+brew install --with-default-names ${runtime_environment[@]} ${sys_pref_tool[@]} \
+    ${terminal_tools[@]} ${network_tool[@]} ${database_service[@]}
 
 brew cask install ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
     ${version_control_app[@]} ${system_helper_service_app[@]} ${quicklook_plugins[@]} \
     ${dev_utils_app} ${media_entertainment_app[@]} ${office_app[@]} ${adobe[@]} 
 
 mas install ${mas_only_app[@]}
-
-# To complete the installation of Cask adobe-creative-cloud, you must also run the installer at
-/usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app/Contents/MacOS/Install
-
-# mackup setting: https://github.com/lra/mackup/blob/master/doc/README.md#icloud
-cat > ~/.mackup.cfg <<-EOF
-[storage]
-engine = icloud
-EOF
-

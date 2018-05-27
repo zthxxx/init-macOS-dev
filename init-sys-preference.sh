@@ -20,6 +20,7 @@ preference_finder() {
 }
 
 specific_UTIs_for_app() {
+    # ref: https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html
     local UTIs_setting_file="specific-UTIs-for-app"
 
     local UTI_VSCode=`osascript -e 'id of app "Visual Studio Code"'`
@@ -27,6 +28,7 @@ specific_UTIs_for_app() {
     local UTI_NeteaseMusic=`osascript -e 'id of app "NeteaseMusic"'`
     local UTI_IINA=`osascript -e 'id of app "IINA"'`
     local UTI_Chrome=`osascript -e 'id of app "Google Chrome"'`
+    local UTI_Spark=`osascript -e 'id of app "Spark"'`
 
     tpl_render "$UTIs_setting_file"
     duti "$UTIs_setting_file"

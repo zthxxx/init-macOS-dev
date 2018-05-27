@@ -4,6 +4,9 @@ ${UTI_VSCode}			public.plain-text				all
 ${UTI_VSCode}			public.source-code				all
 ${UTI_VSCode}			public.script					all
 ${UTI_VSCode}			com.apple.property-list			all
+${UTI_VSCode}			public.delimited-values-text	all
+${UTI_VSCode}			conf							all
+${UTI_VSCode}			cfg								all
 ${UTI_Typora}			net.daringfireball.markdown		all
 ${UTI_NeteaseMusic}		public.audio					all
 ${UTI_NeteaseMusic}		public.mp3						all
@@ -15,3 +18,4 @@ ${UTI_IINA}				public.avi						all
 ${UTI_Chrome}			https
 ${UTI_Chrome}			http
 ${UTI_Chrome}			html							all
+${UTI_Spark}			mailto

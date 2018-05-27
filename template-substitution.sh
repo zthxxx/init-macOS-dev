@@ -2,7 +2,7 @@
 
 substitute_template() {
     local target="$1"
-    eval "echo \"$(< ${target}.template)\"" > ${target}
+    eval "echo \"$(< ${target}.template)\"" > "$target"
 }
 
 tpl_render() {
