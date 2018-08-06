@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+# brew core below
 local runtime_environment=(
     python  ipython
     node
@@ -12,12 +13,14 @@ local sys_pref_tool=(
 
 local terminal_tool=(
     zsh     gnu-sed
+    tmux    screen
     md5sha1sum  autojump
 )
 
 local network_tool=(
     git curl wget aria2
     proxychains-ng
+    lrzsz
 )
 
 local database_service=(
@@ -25,6 +28,7 @@ local database_service=(
 )
 
 
+# brew cask below
 local terminal_app=(
     iterm2  hyper
 )
@@ -32,6 +36,7 @@ local terminal_app=(
 local network_app=(
     shadowsocksx-ng
     google-chrome   telegram
+    teamviewer  paw
 )
 
 local databse_manager=(
@@ -49,8 +54,8 @@ local version_control_app=(
 )
 
 local dev_utils_app=(
-    dash    cheatsheet
-    docker  kitematic
+    dash    docker
+    kitematic
 )
 
 local system_helper_service_app=(

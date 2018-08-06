@@ -3,7 +3,8 @@
 . ./template-render.sh
 
 # sync docs with iCloud and Dropbox
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Dropbox/Documents
+ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Documents
+ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Dropbox/Documents
 
 preference.dock() {
     # ref: https://sspai.com/post/33493
