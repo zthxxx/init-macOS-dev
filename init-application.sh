@@ -14,6 +14,7 @@ local sys_pref_tool=(
 local terminal_tool=(
     zsh     gnu-sed
     tmux    screen
+    terminal-notifier
     md5sha1sum  autojump
 )
 
