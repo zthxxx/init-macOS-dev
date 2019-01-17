@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 # Integrity Verifier
 
+# build md5sum.txt steps
+#
+# with md5sum lib:
+# md5sum *.sh *.template app-preferences/* > md5sum.txt
+#
+# or with built-in md5
+# md5 -r *.sh *.template app-preferences/* > md5sum.txt
+
 local PROJECT_NAME="init-macOS-dev"
 local HASH_FILE="md5sum.txt"
 local SOURCE_URL="https://github.com/zthxxx/${PROJECT_NAME}/raw/master/"

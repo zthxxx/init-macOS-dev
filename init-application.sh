@@ -17,6 +17,7 @@ local terminal_tool=(
     tmux    screen
     terminal-notifier
     md5sha1sum  autojump
+    colordiff
 )
 
 local network_tool=(

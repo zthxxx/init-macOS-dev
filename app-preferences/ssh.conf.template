@@ -1,0 +1,35 @@
+# ~/.ssh/config
+
+Host github
+    HostName github.com
+    IdentityFile ~/.ssh/github.id_rsa
+    User git
+
+Host gitlab
+    HostName gitlab.com
+    IdentityFile ~/.ssh/github.id_rsa
+    User git
+
+# SSH Jumper node
+Host jumper
+    HostName <name>
+    Port <port>
+    User <zthxxx>
+    IdentityFile ~/.ssh/jumper.id_rsa
+    ForwardAgent yes
+
+# IP behind the jumper
+Host 10.*
+    Port 22
+    User <zthxxx>
+    IdentityFile ~/.ssh/jumper.id_rsa
+    ForwardAgent yes
+    StrictHostKeyChecking no
+    ProxyCommand ssh -W %h:%p jumper
+
+Host *
+    ServerAliveInterval 30
+    IdentityFile ~/.ssh/id_rsa
+
+
+
