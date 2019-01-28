@@ -24,14 +24,14 @@ cp ./app-preferences/.yarnrc ~/.yarnrc
 # aria2 config: https://aria2.github.io/manual/en/html/aria2c.html#aria2-conf
 mkdir -p ~/.aria2
 cp ./app-preferences/aria2.conf  ~/.aria2/aria2.conf
-local bt_tracker=`curl -sSL https://github.com/ngosang/trackerslist/raw/master/trackers_all.txt | sed ':n;N;$!bn;s/\n\+/,/g'`
-sed "-i" "s#^bt-tracker=.*#bt-tracker=${bt_tracker}#g" ~/.aria2/aria2.conf
+local bt_tracker=`curl -sSL https://github.com/ngosang/trackerslist/raw/master/trackers_all.txt | perl -0pe "s/\n+/,/gms"
+perl -i -pe "s#^bt-tracker=.*#bt-tracker=${bt_tracker}#g" ~/.aria2/aria2.conf
 
 # vscode user preference
 cp ./app-preferences/vscode.json ~/Library/Application\ Support/Code/User/settings.json
 
 # hyperjs preference
-sed "-i" "
+perl -i -pe "
     s/^ \+fontSize:.*$/    fontSize: 16,/g;
     s/^ \+cursorShape:.*$/    cursorShape: 'BEAM',/g;
     s/^ \+shell:.*$/    shell: 'zsh',/g;

@@ -12,7 +12,7 @@ if [[ -r ~/Documents/Shadowconfig/ssx-ng-config.plist ]]; then
     nohup /Applications/ShadowsocksX-NG.app/Contents/MacOS/ShadowsocksX-NG &> /dev/null &
 fi
 
-sed "-i" "
-    /^socks4 	127\.0\.0\.1/d;
+perl -i -pe "
+    s/^socks4\s*127\.0\.0\.1.*//gms;
     s/^socks5 	127\.0.*/socks5 	127.0.0.1 1080/g;
 " /usr/local/etc/proxychains.conf

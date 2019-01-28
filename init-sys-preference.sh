@@ -6,6 +6,10 @@
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Documents
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Dropbox/Documents
 
+# link airport
+# http://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/
+ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
+
 preference.dock() {
     # ref: https://sspai.com/post/33493
     defaults write com.apple.dock showhidden -bool true

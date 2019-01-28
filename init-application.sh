@@ -9,7 +9,7 @@ local runtime_environment=(
 local sys_pref_tool=(
     mas duti  ncdu
     mackup  pandoc
-    unrar
+    unrar   coreutils
 )
 
 local terminal_tool=(
@@ -104,7 +104,7 @@ local mas_only_app=(
     1189898970  # WeChat Work
 )
 
-brew install --with-default-names ${runtime_environment[@]} ${sys_pref_tool[@]} \
+brew install ${runtime_environment[@]} ${sys_pref_tool[@]} \
     ${terminal_tools[@]} ${network_tool[@]} ${database_service[@]}
 
 brew cask install ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
