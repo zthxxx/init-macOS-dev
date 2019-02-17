@@ -9,6 +9,7 @@ local runtime_environment=(
 local sys_pref_tool=(
     mas duti  ncdu
     mackup  pandoc
+    unrar
 )
 
 local terminal_tool=(
