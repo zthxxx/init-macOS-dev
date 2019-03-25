@@ -3,7 +3,7 @@
 
 # build md5sum.txt steps
 #
-# with md5sum lib:
+# with md5sha1sum lib:
 # md5sum *.sh *.template app-preferences/* > md5sum.txt
 #
 # or with built-in md5
