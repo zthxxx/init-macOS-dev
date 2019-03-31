@@ -1,11 +1,11 @@
 108553d63f73ef6ec8be7c84e3f0ef82 init-app-preference.sh
 0f44edc45871bc41e6fa445f5d0d8ed7 init-application.sh
-eaa132ad5bbcebd1794ab5fd0b46d076 init-proxy.sh
-2af6ccc90a473e88d439fb1a8625e0c7 init-sys-preference.sh
+1cacf178c73be8df2d3f554ad5d4da76 init-proxy.sh
+26aecf13f61c9c25aa7540f1d79466a2 init-sys-preference.sh
 e67141ff6ac44519f5fe0bbcfb257b38 init-zsh.sh
 ccc38b5b324d4cc9a842eee7d24ec877 init.sh
 5112aa4927c7b1232c40fe2b7ab5b2eb template-render.sh
-3044ab77195771a607a14140bac3e8d8 verifier.sh
+b7288178dafff468dc49e3dc8aaff020 verifier.sh
 7e6d5e32fa831cc077c9062786829ebb specific-UTIs-for-app.template
 958535bf98b63dc219044405bab594ba app-preferences/Spotlight.alfredappearance
 b714940e9676fa90f0a28360df8e9eea app-preferences/aria2.conf

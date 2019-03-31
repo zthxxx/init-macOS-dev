@@ -17,7 +17,7 @@ is_command() { command -v $@ &> /dev/null; }
 
 download() {
   local file="$1"
-  if ! curl -sSL "${SOURCE_URL}${file}" -o "$file" --create-dirs; then
+  if ! curl -sSL -H 'Cache-Control: no-cache' "${SOURCE_URL}${file}" -o "$file" --create-dirs; then
     exit 1
   fi
 }

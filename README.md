@@ -10,7 +10,7 @@ download and install applications for custom
 ## usage
 
 ```bash
-curl -sSL git.io/InitMacDev | bash
+curl -sSL -H 'Cache-Control: no-cache' git.io/InitMacDev | bash
 ```
 
 

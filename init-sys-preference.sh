@@ -3,6 +3,7 @@
 . ./template-render.sh
 
 # sync docs with iCloud and Dropbox
+rm -rf ~/Documents
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Documents
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Dropbox/Documents
 
