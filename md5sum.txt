@@ -5,7 +5,7 @@
 e67141ff6ac44519f5fe0bbcfb257b38 init-zsh.sh
 ccc38b5b324d4cc9a842eee7d24ec877 init.sh
 5112aa4927c7b1232c40fe2b7ab5b2eb template-render.sh
-b7288178dafff468dc49e3dc8aaff020 verifier.sh
+a50199226b6fcee7c76f5f64374dcd9d verifier.sh
 7e6d5e32fa831cc077c9062786829ebb specific-UTIs-for-app.template
 958535bf98b63dc219044405bab594ba app-preferences/Spotlight.alfredappearance
 b714940e9676fa90f0a28360df8e9eea app-preferences/aria2.conf

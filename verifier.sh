@@ -9,9 +9,9 @@
 # or with built-in md5
 # md5 -r *.sh *.template app-preferences/* > md5sum.txt
 
-local PROJECT_NAME="init-macOS-dev"
-local HASH_FILE="md5sum.txt"
-local SOURCE_URL="https://github.com/zthxxx/${PROJECT_NAME}/raw/master/"
+PROJECT_NAME="init-macOS-dev"
+HASH_FILE="md5sum.txt"
+SOURCE_URL="https://github.com/zthxxx/${PROJECT_NAME}/raw/master/"
 
 is_command() { command -v $@ &> /dev/null; }
 
@@ -64,8 +64,10 @@ download_files() {
 }
 
 verify() {
-  if is_command git; then 
-    git clone "https://github.com/zthxxx/${PROJECT_NAME}.git"
+  if is_command git && git --help; then
+    # macOS Mojave and above need `command line tools` for git
+    # xcode-select --install
+    git clone "https://github.com/zthxxx/${PROJECT_NAME}.git" || exit 1
     cd "$PROJECT_NAME"
   else
     mkdir "$PROJECT_NAME"
