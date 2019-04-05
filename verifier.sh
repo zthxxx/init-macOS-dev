@@ -64,9 +64,9 @@ download_files() {
 }
 
 verify() {
-  if is_command git && git --help; then
+  if is_command git; then
     # macOS Mojave and above need `command line tools` for git
-    # xcode-select --install
+    xcode-select --install
     git clone "https://github.com/zthxxx/${PROJECT_NAME}.git" || exit 1
     cd "$PROJECT_NAME"
   else
@@ -80,4 +80,4 @@ verify
 
 MAIN="init.sh"
 chmod +x "$MAIN"
-eval "./${MAIN}" "$@"
+sudo -i sudo -u $USER -i "`pwd`/${MAIN}" "`pwd`"

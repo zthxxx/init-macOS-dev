@@ -4,11 +4,6 @@
 git config --global user.name zthxxx
 git config --global user.email zthxxx.me@gmail.com
 
-# To complete the installation of Cask adobe-creative-cloud, you must also run the installer at
-if [[ -d /usr/local/Caskroom/adobe-creative-cloud ]]; then
-    /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app/Contents/MacOS/Install
-fi
-
 # screen config
 curl -sL https://gist.github.com/zthxxx/df7e121048b12c80f260285d88e1091f/raw/.screenrc -o ~/.screenrc
 
@@ -45,4 +40,9 @@ send='/usr/local/bin/iterm2-send-zmodem.sh'
 curl -sSL https://github.com/mmastrac/iterm2-zmodem/raw/master/iterm2-recv-zmodem.sh -o "$recv"
 curl -sSL https://github.com/mmastrac/iterm2-zmodem/raw/master/iterm2-send-zmodem.sh -o "$send"
 chmod +x "$recv" "$send"
+open "https://github.com/mmastrac/iterm2-zmodem#setup"
 
+# To complete the installation of Cask adobe-creative-cloud, you must also run the installer at
+if [[ -d /usr/local/Caskroom/adobe-creative-cloud ]]; then
+    /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app/Contents/MacOS/Install
+fi
