@@ -11,8 +11,9 @@ fi
 
 
 
-sudo -i sudo -u $USER -i "${workspace}/init-proxy.sh"
-sudo -i sudo -u $USER -i "${workspace}/init-zsh.sh"
+bash "${workspace}/init-proxy.sh"
+bash "${workspace}/init-zsh.sh"
+
 zsh init-application.sh
 zsh init-sys-preference.sh
 zsh init-app-preference.sh

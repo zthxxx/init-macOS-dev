@@ -80,4 +80,9 @@ verify
 
 MAIN="init.sh"
 chmod +x "$MAIN"
+
+sudo perl -i -pe "s/^Defaults\tenv_reset.*/Defaults\tenv_reset, timestamp_timeout=-1/" /etc/sudoers
+
 sudo -i sudo -u $USER -i "`pwd`/${MAIN}" "`pwd`"
+
+sudo perl -i -pe "s/^Defaults\tenv_reset.*/Defaults\tenv_reset, timestamp_timeout=60/" /etc/sudoers
