@@ -67,6 +67,7 @@ verify() {
   if is_command git; then
     # macOS Mojave and above need `command line tools` for git
     xcode-select --install
+    rm -rf "${PROJECT_NAME}"
     git clone "https://github.com/zthxxx/${PROJECT_NAME}.git" || exit 1
     cd "$PROJECT_NAME"
   else
