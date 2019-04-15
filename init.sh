@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-if ! command -v brew; then
+if command -v brew; then
+    brew update -v
+    rm -rf "$(brew --cache)"
+else
     ruby -e "$(curl -fsSL git.io/brew-install)"
 fi
 
-brew install expect
 
 workspace="`pwd`"
 # sudo -i sudo -u $USER -i "`pwd`/init.sh" "`pwd`"
@@ -15,12 +17,12 @@ fi
 
 
 function install_flow {
-    unbuffer bash "${workspace}/init-proxy.sh"
-    unbuffer bash "${workspace}/init-zsh.sh"
+    bash "${workspace}/init-proxy.sh"
+    bash "${workspace}/init-zsh.sh"
 
-    unbuffer zsh init-application.sh
-    unbuffer zsh init-sys-preference.sh
-    unbuffer zsh init-app-preference.sh
+    zsh init-application.sh
+    zsh init-sys-preference.sh
+    zsh init-app-preference.sh
 }
 
-install_flow | tee install.log
+install_flow  2>&1 | tee install.log

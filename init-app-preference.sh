@@ -11,15 +11,16 @@ curl -sL https://gist.github.com/zthxxx/df7e121048b12c80f260285d88e1091f/raw/.sc
 cp ./app-preferences/mackup.cfg  ~/.mackup.cfg
 
 # pip config
+mkdir -p ~/.pip/
 cp ./app-preferences/pip.conf ~/.pip/pip.conf
 
 # node yarn config
 cp ./app-preferences/.yarnrc ~/.yarnrc
 
 # aria2 config: https://aria2.github.io/manual/en/html/aria2c.html#aria2-conf
-mkdir -p ~/.aria2
+mkdir -p ~/.aria2/
 cp ./app-preferences/aria2.conf  ~/.aria2/aria2.conf
-local bt_tracker=`curl -sSL https://github.com/ngosang/trackerslist/raw/master/trackers_all.txt | perl -0pe "s/\n+/,/gms"
+local bt_tracker=`curl -sSL https://github.com/ngosang/trackerslist/raw/master/trackers_all.txt | perl -0pe "s/\n+/,/gms"`
 perl -i -pe "s#^bt-tracker=.*#bt-tracker=${bt_tracker}#g" ~/.aria2/aria2.conf
 
 # vscode user preference

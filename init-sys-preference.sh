@@ -3,13 +3,13 @@
 . ./template-render.sh
 
 # sync docs with iCloud and Dropbox
-rm -rf ~/Documents
+sudo rm -rf ~/Documents
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Documents
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Dropbox/Documents
 
 # link airport
 # http://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/
-ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
+ln -f -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
 
 preference.dock() {
     # ref: https://sspai.com/post/33493

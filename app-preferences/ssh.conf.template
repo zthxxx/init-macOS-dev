@@ -30,6 +30,6 @@ Host 10.*
 Host *
     ServerAliveInterval 30
     IdentityFile ~/.ssh/id_rsa
-
-
-
+    ControlMaster auto
+    ControlPath  ~/.ssh/sockets/%r@%h-%p
+    ControlPersist  600
