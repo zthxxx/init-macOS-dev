@@ -7,6 +7,13 @@ sudo rm -rf ~/Documents
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Documents
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Dropbox/Documents
 
+# ssh config
+mkdir -p ~/.ssh/
+cp ./app-preferences/ssh.conf.template  ~/.ssh/config
+cp ~/Documents/Temporary/ssh-config/*  ~/.ssh/
+chmod 400 ~/.ssh/*_rsa
+chmod 400 ~/.ssh/*.pub
+
 # link airport
 # http://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/
 ln -f -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
