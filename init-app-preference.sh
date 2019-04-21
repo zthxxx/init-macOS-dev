@@ -34,14 +34,16 @@ perl -i -pe "
     s/^ \+windowSize:.*$/    windowSize: [1420, 900],/g;
 " ~/.hyper.js
 
-# lrzsz setup
+
+# iTerm2 preference
+defaults import com.googlecode.iterm2 ./app-preferences/iTerm2.plist
+## iTerm2 lrzsz setup
 # https://gist.github.com/zthxxx/9171c12538605d92781b74274ba8b9e1
-recv='/usr/local/bin/iterm2-recv-zmodem.sh'
-send='/usr/local/bin/iterm2-send-zmodem.sh'
-curl -sSL https://github.com/mmastrac/iterm2-zmodem/raw/master/iterm2-recv-zmodem.sh -o "$recv"
-curl -sSL https://github.com/mmastrac/iterm2-zmodem/raw/master/iterm2-send-zmodem.sh -o "$send"
-chmod +x "$recv" "$send"
-open "https://github.com/mmastrac/iterm2-zmodem#setup"
+# https://github.com/laggardkernel/iterm2-zmodem
+# https://github.com/laggardkernel/homebrew-tap/blob/master/Formula/iterm2-zmodem.rb
+brew install laggardkernel/tap/iterm2-zmodem
+open "https://github.com/laggardkernel/homebrew-tap/blob/master/Formula/iterm2-zmodem.rb"
+
 
 # To complete the installation of Cask adobe-creative-cloud, you must also run the installer at
 if [[ -d /usr/local/Caskroom/adobe-creative-cloud ]]; then
