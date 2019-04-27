@@ -15,7 +15,8 @@ ${UTI_IINA}				public.movie					all
 ${UTI_IINA}				public.video					all
 ${UTI_IINA}				public.mpeg-4					all
 ${UTI_IINA}				public.avi						all
-${UTI_Chrome}			https
-${UTI_Chrome}			http
+${UTI_Chrome}			https							all
+${UTI_Chrome}			http							all
 ${UTI_Chrome}			html							all
-${UTI_Spark}			mailto
+${UTI_Spark}			mailto							all
+${UTI_Iterm2}			ssh								all

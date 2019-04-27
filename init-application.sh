@@ -45,6 +45,7 @@ local network_tool=(
     lrzsz
     nginx
     telnet
+    mosh
 )
 
 local database_service=(

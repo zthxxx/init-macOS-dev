@@ -47,6 +47,7 @@ specific_UTIs_for_app() {
     local UTI_IINA=`osascript -e 'id of app "IINA"'`
     local UTI_Chrome=`osascript -e 'id of app "Google Chrome"'`
     local UTI_Spark=`osascript -e 'id of app "Spark"'`
+    local UTI_Iterm2=`osascript -e 'id of app "Iterm2"'`
 
     tmplt.render "$UTIs_setting_file"
     duti "$UTIs_setting_file"
