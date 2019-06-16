@@ -2,13 +2,17 @@
 
 . ./template-render.sh
 
+# disable `Last login` message from iTerm
+# https://ashokgelal.com/2017/01/04/til-iterm-hush-last-login/
+touch ~/.hushlogin
+
 # sync docs with iCloud and Dropbox
 sudo rm -rf ~/Documents
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Documents
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Dropbox/Documents
 
 # ssh config
-mkdir -p ~/.ssh/
+mkdir -p ~/.ssh/sockets/
 cp ./app-preferences/ssh.conf.template  ~/.ssh/config
 cp ~/Documents/Temporary/ssh-config/*  ~/.ssh/
 chmod 400 ~/.ssh/*_rsa

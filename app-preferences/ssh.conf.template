@@ -28,8 +28,10 @@ Host 10.*
     ProxyCommand ssh -W %h:%p jumper
 
 Host *
+    TCPKeepAlive=yes
     ServerAliveInterval 30
     IdentityFile ~/.ssh/id_rsa
+    Compression=yes
     ControlMaster auto
-    ControlPath  ~/.ssh/sockets/%r@%h-%p
-    ControlPersist  600
+    ControlPath ~/.ssh/sockets/%r@%h:%p
+    ControlPersist 6h

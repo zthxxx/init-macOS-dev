@@ -97,6 +97,8 @@ local system_helper_service_app=(
     dropbox
     intel-power-gadget
     istat-menus
+    keycastr
+    steermouse
 )
 
 local quicklook_plugins=(
