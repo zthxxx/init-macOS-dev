@@ -34,6 +34,9 @@ local terminal_tool=(
     colordiff
     expect
     zsh
+    asciinema
+    ranger
+    tig
 )
 
 local network_tool=(
@@ -46,6 +49,7 @@ local network_tool=(
     nginx
     telnet
     mosh
+    httpie
 )
 
 local database_service=(
@@ -98,7 +102,7 @@ local system_helper_service_app=(
     intel-power-gadget
     istat-menus
     keycastr
-    steermouse
+    keyboard-maestro
 )
 
 local quicklook_plugins=(
@@ -137,7 +141,7 @@ local mas_only_app=(
     441258766   # Magnet
     1176895641  # Spark
     836500024   # WeChat
-    1189898970  # WeChat Work
+    # 1189898970  # WeChat Work
     # 1449412482  # Reeder 4
 )
 
