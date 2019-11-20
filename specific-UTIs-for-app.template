@@ -18,5 +18,4 @@ ${UTI_IINA}				public.avi						all
 ${UTI_Chrome}			https							all
 ${UTI_Chrome}			http							all
 ${UTI_Chrome}			html							all
-${UTI_Spark}			mailto							all
 ${UTI_Iterm2}			ssh								all

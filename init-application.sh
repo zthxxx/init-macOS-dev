@@ -71,6 +71,7 @@ local network_app=(
     teamviewer
     paw
     wireshark
+    netspot
 )
 
 local databse_manager=(
@@ -103,6 +104,9 @@ local system_helper_service_app=(
     istat-menus
     keycastr
     keyboard-maestro
+    snipaste
+    kap
+    parallels
 )
 
 local quicklook_plugins=(
@@ -120,6 +124,7 @@ local media_entertainment_app=(
     neteasemusic
     iina
     boom-3d
+    obs
 )
 
 local office_app=(
@@ -139,10 +144,18 @@ local gaming=(
 
 local mas_only_app=(
     441258766   # Magnet
-    1176895641  # Spark
     836500024   # WeChat
-    # 1189898970  # WeChat Work
     # 1449412482  # Reeder 4
+)
+
+local npm_global_app=(
+    node-gyp
+    nodemon
+    esm
+    typescript
+    ts-node
+    serve
+    eloc
 )
 
 brew install ${runtime_environment[@]} ${sys_pref_tool[@]} \
@@ -156,3 +169,5 @@ brew cask install ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${e
     ${dev_utils_app} ${media_entertainment_app[@]} ${office_app[@]} ${adobe[@]} ${gaming[@]}
 
 mas install ${mas_only_app[@]}
+
+npm i -g ${npm_global_app[@]}
