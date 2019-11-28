@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+local brew_taps=(
+    denji/nginx
+)
+
 # brew core below
 local runtime_environment=(
     gcc
@@ -44,12 +48,14 @@ local network_tool=(
     curl
     wget
     aria2
+    annie
     proxychains-ng
     lrzsz
-    nginx
+    nginx-full
     telnet
     mosh
     httpie
+    rs/tap/curlie
 )
 
 local database_service=(
@@ -155,8 +161,11 @@ local npm_global_app=(
     typescript
     ts-node
     serve
+    pm2
     eloc
 )
+
+brew tap ${brew_taps[@]}
 
 brew install ${runtime_environment[@]} ${sys_pref_tool[@]} \
     ${terminal_tools[@]} ${network_tool[@]} ${database_service[@]}
