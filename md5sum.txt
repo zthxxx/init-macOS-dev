@@ -1,15 +1,17 @@
-fea91d6d6f7368fd966cdd2364b5e122 init-app-preference.sh
-0f44edc45871bc41e6fa445f5d0d8ed7 init-application.sh
-1cacf178c73be8df2d3f554ad5d4da76 init-proxy.sh
-26aecf13f61c9c25aa7540f1d79466a2 init-sys-preference.sh
-e67141ff6ac44519f5fe0bbcfb257b38 init-zsh.sh
-ee180622dffd2bbe1e005f7084ed2200 init.sh
+8c7ad2895706bc140984b47c6105c33e init-app-preference.sh
+be0bec68e561964fdebe5f7bfef64d85 init-application.sh
+ca06bc32681b7dd476ce8e8b17681089 init-proxy.sh
+6c826df426b0737618b1bf1870eb4b6c init-sys-preference.sh
+a3fb4ae512db809c4be0718f3bf9d21a init-zsh.sh
+19de603f3e5592b6ed4fe96d4ba84c7e init.sh
 5112aa4927c7b1232c40fe2b7ab5b2eb template-render.sh
 0e9aa40b377897801b2b1826a2b52905 verifier.sh
-7e6d5e32fa831cc077c9062786829ebb specific-UTIs-for-app.template
+67bcbb26e8464265af6389711aebf819 specific-UTIs-for-app.template
 958535bf98b63dc219044405bab594ba app-preferences/Spotlight.alfredappearance
 b714940e9676fa90f0a28360df8e9eea app-preferences/aria2.conf
+55df7dbef896f1d29da32755d9ac7d8f app-preferences/iStat Menus Settings.ismp
+25961696f2ad73060d956b1ecfab9872 app-preferences/iTerm2.plist
 cf8681e773ad533fdfcd2a4bc9d07c4b app-preferences/mackup.cfg
 d3dfe5f53e8c67e7097243b7d1e14197 app-preferences/pip.conf
-6112fa31519f9469e1399650d8dd0e71 app-preferences/ssh.conf.template
+4d7c02b52cdc4265bbc1365d09d1b714 app-preferences/ssh.conf.template
 020d0d5a2f32eb05e5a26fdd97e06c05 app-preferences/vscode.json

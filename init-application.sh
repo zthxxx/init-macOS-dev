@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+set -ex
+
 local brew_taps=(
     denji/nginx
 )
@@ -19,7 +21,6 @@ local sys_pref_tool=(
     duti
     tree
     ncdu
-    unrar
     pandoc
     mas
     mackup
@@ -40,7 +41,7 @@ local terminal_tool=(
     zsh
     asciinema
     ranger
-    tig
+    lazygit
 )
 
 local network_tool=(
@@ -56,12 +57,6 @@ local network_tool=(
     mosh
     httpie
     rs/tap/curlie
-)
-
-local database_service=(
-    mysql
-    mongodb
-    redis
 )
 
 
@@ -81,8 +76,7 @@ local network_app=(
 )
 
 local databse_manager=(
-    robo-3t
-    navicat-premium
+    datagrip
 )
 
 local editor_IDE_app=(
@@ -90,7 +84,6 @@ local editor_IDE_app=(
     visual-studio-code
     webstorm
     pycharm
-    datagrip
 )
 
 local version_control_app=(
@@ -103,16 +96,15 @@ local dev_utils_app=(
 )
 
 local system_helper_service_app=(
-    scroll-reverser
     alfred
-    dropbox
     intel-power-gadget
     istat-menus
     keycastr
     keyboard-maestro
     snipaste
     kap
-    parallels
+    ubersicht
+    monitorcontrol
 )
 
 local quicklook_plugins=(
@@ -129,18 +121,16 @@ local quicklook_plugins=(
 local media_entertainment_app=(
     neteasemusic
     iina
-    boom-3d
-    obs
 )
 
 local office_app=(
     microsoft-office
-    xmind
 )
 
 local adobe=(
     adobe-creative-cloud
     sketch
+    figma
     # clip-studio-paint
 )
 
@@ -151,6 +141,7 @@ local gaming=(
 local mas_only_app=(
     441258766   # Magnet
     836500024   # WeChat
+    451108668   ## QQ
     # 1449412482  # Reeder 4
 )
 
@@ -168,12 +159,12 @@ local npm_global_app=(
 brew tap ${brew_taps[@]}
 
 brew install ${runtime_environment[@]} ${sys_pref_tool[@]} \
-    ${terminal_tools[@]} ${network_tool[@]} ${database_service[@]}
+    ${terminal_tools[@]} ${network_tool[@]}
 
 brew link --overwrite ${runtime_environment[@]} ${sys_pref_tool[@]} \
-    ${terminal_tools[@]} ${network_tool[@]} ${database_service[@]}
+    ${terminal_tools[@]} ${network_tool[@]}
 
-brew cask install ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
+brew install --cask ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
     ${version_control_app[@]} ${system_helper_service_app[@]} ${quicklook_plugins[@]} \
     ${dev_utils_app} ${media_entertainment_app[@]} ${office_app[@]} ${adobe[@]} ${gaming[@]}
 

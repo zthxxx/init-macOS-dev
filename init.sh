@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+set -ex
+
 if command -v brew; then
     brew update -v
     rm -rf "$(brew --cache)"
 else
-    ruby -e "$(curl -fsSL git.io/brew-install)"
+    ruby -e "$(curl -fsSL -H 'Cache-Control: no-cache' git.io/brew-install)"
 fi
 
 

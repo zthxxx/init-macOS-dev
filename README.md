@@ -13,6 +13,17 @@ download and install applications for custom
 curl -sSL -H 'Cache-Control: no-cache' git.io/InitMacDev | bash
 ```
 
+## Descrption
+
+before use this initialization, you shoule
+
+- login your Apple account and iCloud
+- `sudo xcode-select --install` and reboot
+- make sure ssh config which you want sync in `{iCloud}/Documents/Temporary/ssh-config/`
+- [option] make sure ShadowsocksX config at `{iCloud}/Documents/Shadowconfig/ssx-ng-config.plist`
+- [option] make sure iTerm2 profiles config in `{iCloud}/Documents/Temporary/iTerm2/`
+
+
 
 ## Author
 

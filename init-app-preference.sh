@@ -1,11 +1,13 @@
 #!/usr/bin/env zsh
 
+set -ex
+
 # git user setting
 git config --global user.name zthxxx
 git config --global user.email zthxxx.me@gmail.com
 
 # screen config
-curl -sL https://gist.github.com/zthxxx/df7e121048b12c80f260285d88e1091f/raw/.screenrc -o ~/.screenrc
+curl -H 'Cache-Control: no-cache' https://gist.github.com/zthxxx/df7e121048b12c80f260285d88e1091f/raw/.screenrc -o ~/.screenrc
 
 # mackup setting: https://github.com/lra/mackup/blob/master/doc/README.md#icloud
 cp ./app-preferences/mackup.cfg  ~/.mackup.cfg
@@ -20,7 +22,7 @@ cp ./app-preferences/.yarnrc ~/.yarnrc
 # aria2 config: https://aria2.github.io/manual/en/html/aria2c.html#aria2-conf
 mkdir -p ~/.aria2/
 cp ./app-preferences/aria2.conf  ~/.aria2/aria2.conf
-local bt_tracker=`curl -sSL https://github.com/ngosang/trackerslist/raw/master/trackers_all.txt | perl -0pe "s/\n+/,/gms"`
+local bt_tracker=`curl -sSL -H 'Cache-Control: no-cache' https://github.com/ngosang/trackerslist/raw/master/trackers_all.txt | perl -0pe "s/\n+/,/gms"`
 perl -i -pe "s#^bt-tracker=.*#bt-tracker=${bt_tracker}#g" ~/.aria2/aria2.conf
 
 # vscode user preference
@@ -37,6 +39,12 @@ perl -i -pe "
 
 # iTerm2 preference
 defaults import com.googlecode.iterm2 ./app-preferences/iTerm2.plist
+## https://iterm2.com/documentation-dynamic-profiles.html
+if [[ -r ~/Documents/Temporary/iTerm2]]; then
+    mkdir -p '~/Library/Application Support/iTerm2/DynamicProfiles'
+    cp ~/Documents/Temporary/iTerm2/* '~/Library/Application Support/iTerm2/DynamicProfiles/'
+fi
+
 ## iTerm2 lrzsz setup
 # https://gist.github.com/zthxxx/9171c12538605d92781b74274ba8b9e1
 # https://github.com/laggardkernel/iterm2-zmodem
