@@ -4,6 +4,7 @@ set -ex
 
 brew install zsh
 sudo chsh -s `command -v zsh` $USER
+sudo chown $USER ~/.zshrc
 
 curl -sSL -H 'Cache-Control: no-cache' git.io/tvimrc -o ~/.vimrc
 curl -sSL -H 'Cache-Control: no-cache' git.io/jovial | sudo bash -s $USER

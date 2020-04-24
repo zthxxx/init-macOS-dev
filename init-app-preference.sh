@@ -26,7 +26,8 @@ local bt_tracker=`curl -sSL -H 'Cache-Control: no-cache' https://github.com/ngos
 perl -i -pe "s#^bt-tracker=.*#bt-tracker=${bt_tracker}#g" ~/.aria2/aria2.conf
 
 # vscode user preference
-cp ./app-preferences/vscode.json ~/Library/Application\ Support/Code/User/settings.json
+mkdir -p '~/Library/Application Support/Code/User/'
+cp ./app-preferences/vscode.json '~/Library/Application Support/Code/User/settings.json'
 
 # hyperjs preference
 perl -i -pe "
@@ -40,7 +41,7 @@ perl -i -pe "
 # iTerm2 preference
 defaults import com.googlecode.iterm2 ./app-preferences/iTerm2.plist
 ## https://iterm2.com/documentation-dynamic-profiles.html
-if [[ -r ~/Documents/Temporary/iTerm2]]; then
+if [[ -r ~/Documents/Temporary/iTerm2 ]]; then
     mkdir -p '~/Library/Application Support/iTerm2/DynamicProfiles'
     cp ~/Documents/Temporary/iTerm2/* '~/Library/Application Support/iTerm2/DynamicProfiles/'
 fi
@@ -51,9 +52,3 @@ fi
 # https://github.com/laggardkernel/homebrew-tap/blob/master/Formula/iterm2-zmodem.rb
 brew install laggardkernel/tap/iterm2-zmodem
 open "https://github.com/laggardkernel/homebrew-tap/blob/master/Formula/iterm2-zmodem.rb"
-
-
-# To complete the installation of Cask adobe-creative-cloud, you must also run the installer at
-if [[ -d /usr/local/Caskroom/adobe-creative-cloud ]]; then
-    /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app/Contents/MacOS/Install
-fi

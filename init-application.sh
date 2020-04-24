@@ -100,7 +100,6 @@ local system_helper_service_app=(
     intel-power-gadget
     istat-menus
     keycastr
-    keyboard-maestro
     snipaste
     kap
     ubersicht
