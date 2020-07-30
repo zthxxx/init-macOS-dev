@@ -1,4 +1,4 @@
-c65819fb64c078b4796f44b3aa7e2595 init-app-preference.sh
+4c523750d942cfc666b2ad9f2dcd901b init-app-preference.sh
 6b4ca17f630e16ffbe5662499008f20f init-application.sh
 ca06bc32681b7dd476ce8e8b17681089 init-proxy.sh
 576fb6353a857b99eb6880200cb49c9a init-sys-preference.sh
@@ -10,7 +10,8 @@ ca06bc32681b7dd476ce8e8b17681089 init-proxy.sh
 958535bf98b63dc219044405bab594ba app-preferences/Spotlight.alfredappearance
 b714940e9676fa90f0a28360df8e9eea app-preferences/aria2.conf
 55df7dbef896f1d29da32755d9ac7d8f app-preferences/iStat Menus Settings.ismp
-25961696f2ad73060d956b1ecfab9872 app-preferences/iTerm2.plist
+9bfbcbdbf9b232160979569a5fd872d9 app-preferences/iTerm2-profile-Localhost.json
+083bcfa138aedf3269197ee860f34559 app-preferences/iTerm2.plist
 cf8681e773ad533fdfcd2a4bc9d07c4b app-preferences/mackup.cfg
 d3dfe5f53e8c67e7097243b7d1e14197 app-preferences/pip.conf
 4d7c02b52cdc4265bbc1365d09d1b714 app-preferences/ssh.conf.template

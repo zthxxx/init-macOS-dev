@@ -16,8 +16,6 @@ cp ./app-preferences/mackup.cfg  ~/.mackup.cfg
 mkdir -p ~/.pip/
 cp ./app-preferences/pip.conf ~/.pip/pip.conf
 
-# node yarn config
-cp ./app-preferences/.yarnrc ~/.yarnrc
 
 # aria2 config: https://aria2.github.io/manual/en/html/aria2c.html#aria2-conf
 mkdir -p ~/.aria2/
@@ -26,8 +24,8 @@ local bt_tracker=`curl -sSL -H 'Cache-Control: no-cache' https://github.com/ngos
 perl -i -pe "s#^bt-tracker=.*#bt-tracker=${bt_tracker}#g" ~/.aria2/aria2.conf
 
 # vscode user preference
-mkdir -p '~/Library/Application Support/Code/User/'
-cp ./app-preferences/vscode.json '~/Library/Application Support/Code/User/settings.json'
+mkdir -p ~/Library/Application\ Support/Code/User/
+cp ./app-preferences/vscode.json ~/Library/Application\ Support/Code/User/settings.json
 
 # hyperjs preference
 perl -i -pe "
@@ -41,9 +39,10 @@ perl -i -pe "
 # iTerm2 preference
 defaults import com.googlecode.iterm2 ./app-preferences/iTerm2.plist
 ## https://iterm2.com/documentation-dynamic-profiles.html
+## https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
 if [[ -r ~/Documents/Temporary/iTerm2 ]]; then
-    mkdir -p '~/Library/Application Support/iTerm2/DynamicProfiles'
-    cp ~/Documents/Temporary/iTerm2/* '~/Library/Application Support/iTerm2/DynamicProfiles/'
+    mkdir -p ~/Library/Application\ Support/iTerm2/DynamicProfiles
+    cp ./app-preferences/iTerm2-profile-Localhost.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/Localhost.json
 fi
 
 ## iTerm2 lrzsz setup
