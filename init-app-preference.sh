@@ -40,10 +40,8 @@ perl -i -pe "
 defaults import com.googlecode.iterm2 ./app-preferences/iTerm2.plist
 ## https://iterm2.com/documentation-dynamic-profiles.html
 ## https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
-if [[ -r ~/Documents/Temporary/iTerm2 ]]; then
-    mkdir -p ~/Library/Application\ Support/iTerm2/DynamicProfiles
-    cp ./app-preferences/iTerm2-profile-Localhost.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/Localhost.json
-fi
+mkdir -p ~/Library/Application\ Support/iTerm2/DynamicProfiles
+cp ./app-preferences/iTerm2-profile-Localhost.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/Localhost.json
 
 ## iTerm2 lrzsz setup
 # https://gist.github.com/zthxxx/9171c12538605d92781b74274ba8b9e1

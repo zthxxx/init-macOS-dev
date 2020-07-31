@@ -21,8 +21,8 @@ before use this initialization, you shoule
 - login your Apple account / iCloud / App Store
 - `sudo xcode-select --install` and reboot
 - make sure your App Store account are purchased with `init-application.sh - ${mas_only_app}`
-- make sure ssh config which you want sync in `{iCloud}/Documents/Temporary/ssh-config/`
-- [option] make sure ShadowsocksX config at `{iCloud}/Documents/Shadowconfig/ssx-ng-config.plist`
+- make sure ssh config which you want sync in `{iCloud}/Documents/Preferences/ssh-config/`
+- [option] make sure ShadowsocksX config at `{iCloud}/Documents/Preferences/shadowsocks/ssx-ng-config.plist`
 
 
 

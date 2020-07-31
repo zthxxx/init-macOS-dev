@@ -15,7 +15,7 @@ ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Documents
 # ssh config
 mkdir -p ~/.ssh/sockets/
 cp ./app-preferences/ssh.conf.template  ~/.ssh/config
-cp -f ~/Documents/Temporary/ssh-config/*  ~/.ssh/
+cp -f ~/Documents/Preferences/ssh-config/*  ~/.ssh/
 chmod 400 ~/.ssh/*_rsa
 chmod 400 ~/.ssh/*.pub
 
