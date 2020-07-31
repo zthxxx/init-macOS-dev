@@ -3,7 +3,7 @@
 set -ex
 
 brew install git curl wget proxychains-ng 
-brew install --cask shadowsocksx-ng
+brew install --cask shadowsocksx-ng-r
 
 # to store plist as json like
 # defaults read com.qiuyuzhou.ShadowsocksX-NG > ~/Documents/Preferences/shadowsocks/ssx-ng-config.plist
@@ -12,7 +12,7 @@ brew install --cask shadowsocksx-ng
 # [Hint] absolute path of iCloud is ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents
 if [[ -r ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/Preferences/shadowsocks/ssx-ng-config.plist ]]; then
     defaults import com.qiuyuzhou.ShadowsocksX-NG ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/Preferences/shadowsocks/ssx-ng-config.plist
-    sudo nohup /Applications/ShadowsocksX-NG.app/Contents/MacOS/ShadowsocksX-NG &> /dev/null &
+    sudo nohup /Applications/ShadowsocksX-NG-R8.app/Contents/MacOS/ShadowsocksX-NG &> /dev/null &
 fi
 
 perl -i -pe "

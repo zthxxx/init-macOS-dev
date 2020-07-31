@@ -66,7 +66,7 @@ local terminal_app=(
 )
 
 local network_app=(
-    shadowsocksx-ng
+    shadowsocksx-ng-r
     google-chrome
     telegram
     teamviewer

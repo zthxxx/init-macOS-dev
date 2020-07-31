@@ -1,6 +1,6 @@
 6bbbfb36c52026af091cb5bdc813c676 init-app-preference.sh
-6b4ca17f630e16ffbe5662499008f20f init-application.sh
-6a4b73738a584f0ec59650aa7bc3400f init-proxy.sh
+0d87331cc8ae0f79e4b59c4a3960c507 init-application.sh
+95e20689607b7ea59ca4fab79b8714a4 init-proxy.sh
 dfab8e389b61e6cd0138fb45968a4d8c init-sys-preference.sh
 e6f2a6b0714beec5289fb908867e9136 init-zsh.sh
 19de603f3e5592b6ed4fe96d4ba84c7e init.sh
