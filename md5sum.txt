@@ -2,7 +2,7 @@
 6b4ca17f630e16ffbe5662499008f20f init-application.sh
 6a4b73738a584f0ec59650aa7bc3400f init-proxy.sh
 dfab8e389b61e6cd0138fb45968a4d8c init-sys-preference.sh
-854f7bc5b201b465eabe41aed853a83f init-zsh.sh
+e6f2a6b0714beec5289fb908867e9136 init-zsh.sh
 19de603f3e5592b6ed4fe96d4ba84c7e init.sh
 5112aa4927c7b1232c40fe2b7ab5b2eb template-render.sh
 8a3aab715fdb0e810da70c2dd4b80659 verifier.sh
