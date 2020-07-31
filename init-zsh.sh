@@ -4,6 +4,7 @@ set -ex
 
 brew install zsh
 sudo chsh -s `command -v zsh` $USER
+touch ~/.zshrc
 sudo chown $USER ~/.zshrc
 
 curl -sSL -H 'Cache-Control: no-cache' git.io/tvimrc -o ~/.vimrc
