@@ -8,6 +8,8 @@ set -ex
 # https://ashokgelal.com/2017/01/04/til-iterm-hush-last-login/
 touch ~/.hushlogin
 
+sudo scutil --set HostName MacbookProX
+
 # sync docs with iCloud
 sudo rm -rf ~/Documents
 ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Documents
