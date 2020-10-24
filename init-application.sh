@@ -142,6 +142,7 @@ local mas_only_app=(
     836500024   # WeChat
     451108668   ## QQ
     # 1449412482  # Reeder 4
+    1233965871  # ScreenBrush
 )
 
 local npm_global_app=(
