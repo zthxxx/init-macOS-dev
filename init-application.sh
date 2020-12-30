@@ -87,7 +87,7 @@ local editor_IDE_app=(
 )
 
 local version_control_app=(
-    sourcetree
+    fork
 )
 
 local dev_utils_app=(
