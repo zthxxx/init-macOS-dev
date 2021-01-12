@@ -151,6 +151,8 @@ local npm_global_app=(
     esm
     typescript
     ts-node
+    tsx
+    git-split-diffs
     serve
     pm2
     eloc
@@ -171,3 +173,6 @@ brew install --cask ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} $
 mas install ${mas_only_app[@]}
 
 npm i -g ${npm_global_app[@]}
+
+# https://github.com/banga/git-split-diffs
+git config --global core.pager "git-split-diffs --color | less -RFX"
