@@ -1,0 +1,5 @@
+payload:
+  - '+.openai.com'
+  - '+.github.com'
+  - '+.github.io'
+  - '+.githubusercontent.com'
