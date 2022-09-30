@@ -8,6 +8,7 @@ local brew_taps=(
 
 # brew core below
 local runtime_environment=(
+    coreutils
     gcc
     glib
     python
@@ -42,6 +43,9 @@ local terminal_tool=(
     asciinema
     ranger
     lazygit
+    neovim
+    smudge/smudge/nightlight
+    neofetch
 )
 
 local network_tool=(
@@ -57,6 +61,10 @@ local network_tool=(
     mosh
     httpie
     rs/tap/curlie
+    iproute2mac
+    netcat
+    socat
+    iperf3
 )
 
 
@@ -66,13 +74,13 @@ local terminal_app=(
 )
 
 local network_app=(
-    shadowsocksx-ng-r
     google-chrome
     telegram
     teamviewer
     paw
     wireshark
     netspot
+    tailscale
 )
 
 local databse_manager=(
@@ -91,12 +99,12 @@ local version_control_app=(
 )
 
 local dev_utils_app=(
-    docker
+    orbstack
     kitematic
 )
 
 local system_helper_service_app=(
-    alfred
+    raycast
     intel-power-gadget
     istat-menus
     keycastr
@@ -104,6 +112,8 @@ local system_helper_service_app=(
     kap
     ubersicht
     monitorcontrol
+    the-unarchiver
+    hiddenbar
 )
 
 local quicklook_plugins=(
@@ -138,7 +148,7 @@ local gaming=(
 )
 
 local mas_only_app=(
-    441258766   # Magnet
+    # 441258766   # Magnet
     836500024   # WeChat
     451108668   ## QQ
     # 1449412482  # Reeder 4
@@ -169,6 +179,9 @@ brew link --overwrite ${runtime_environment[@]} ${sys_pref_tool[@]} \
 brew install --cask ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
     ${version_control_app[@]} ${system_helper_service_app[@]} ${quicklook_plugins[@]} \
     ${dev_utils_app} ${media_entertainment_app[@]} ${office_app[@]} ${adobe[@]} ${gaming[@]}
+
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
 
 mas install ${mas_only_app[@]}
 

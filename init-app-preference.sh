@@ -7,7 +7,8 @@ git config --global user.name zthxxx
 git config --global user.email zthxxx.me@gmail.com
 
 # screen config
-curl -H 'Cache-Control: no-cache' https://gist.github.com/zthxxx/df7e121048b12c80f260285d88e1091f/raw/.screenrc -o ~/.screenrc
+curl -sLH 'Cache-Control: no-cache' https://gist.github.com/zthxxx/df7e121048b12c80f260285d88e1091f/raw/.screenrc -o ~/.screenrc
+curl -sLH 'Cache-Control: no-cache' https://gist.github.com/zthxxx/bbbb37c100254d688236c21e8b977b85/raw/.tmux.conf -o ~/.tmux.conf
 
 # mackup setting: https://github.com/lra/mackup/blob/master/doc/README.md#icloud
 cp ./app-preferences/mackup.cfg  ~/.mackup.cfg
