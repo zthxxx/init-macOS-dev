@@ -81,12 +81,13 @@ verify() {
 mkdir -p ~/Downloads
 cd ~/Downloads
 
+
+sudo perl -i -pe "s/^Defaults\tenv_reset.*/Defaults\tenv_reset, timestamp_timeout=-1/" /etc/sudoers
+
 verify
 
 MAIN="init.sh"
 chmod +x "$MAIN"
-
-sudo perl -i -pe "s/^Defaults\tenv_reset.*/Defaults\tenv_reset, timestamp_timeout=-1/" /etc/sudoers
 
 sudo -i sudo -u $USER -i "`pwd`/${MAIN}" "`pwd`"
 

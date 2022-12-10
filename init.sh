@@ -6,7 +6,8 @@ if command -v brew; then
     brew update -v
     rm -rf "$(brew --cache)"
 else
-    ruby -e "$(curl -fsSL -H 'Cache-Control: no-cache' git.io/brew-install)"
+    # https://github.com/Homebrew/install/tree/master
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 
@@ -19,7 +20,7 @@ fi
 
 
 function install_flow {
-    bash "${workspace}/init-proxy.sh"
+    # bash "${workspace}/init-proxy.sh"
     bash "${workspace}/init-zsh.sh"
 
     zsh init-application.sh

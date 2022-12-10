@@ -112,7 +112,7 @@ local system_helper_service_app=(
     kap
     ubersicht
     monitorcontrol
-    the-unarchiver
+    maczip
     hiddenbar
 )
 

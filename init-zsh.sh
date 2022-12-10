@@ -2,7 +2,7 @@
 
 set -ex
 
-brew install zsh
+brew install git curl wget zsh
 sudo chsh -s `command -v zsh` $USER
 touch ~/.zshrc
 sudo chown $USER ~/.zshrc
