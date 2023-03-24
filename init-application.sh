@@ -53,8 +53,6 @@ local network_tool=(
     curl
     wget
     aria2
-    annie
-    proxychains-ng
     lrzsz
     nginx-full
     telnet
@@ -67,15 +65,19 @@ local network_tool=(
     iperf3
 )
 
+local im_app=(
+    discord
+    telegram
+)
 
 # brew cask below
 local terminal_app=(
     iterm2
+    warp
 )
 
 local network_app=(
     google-chrome
-    telegram
     teamviewer
     paw
     wireshark
@@ -105,7 +107,8 @@ local dev_utils_app=(
 
 local system_helper_service_app=(
     raycast
-    intel-power-gadget
+    hammerspoon
+    # intel-power-gadget
     istat-menus
     keycastr
     snipaste
@@ -114,6 +117,12 @@ local system_helper_service_app=(
     monitorcontrol
     maczip
     hiddenbar
+    wacom-tablet
+    oversight
+    input-source-pro
+    trex
+    logitech-options
+    homebrew/cask-fonts/font-hack-nerd-font
 )
 
 local quicklook_plugins=(
@@ -133,14 +142,16 @@ local media_entertainment_app=(
 )
 
 local office_app=(
+    obsidian
     microsoft-office
 )
 
 local adobe=(
-    adobe-creative-cloud
+    # adobe-creative-cloud
     sketch
     figma
-    # clip-studio-paint
+    spline
+    blender
 )
 
 local gaming=(
@@ -148,10 +159,8 @@ local gaming=(
 )
 
 local mas_only_app=(
-    # 441258766   # Magnet
     836500024   # WeChat
-    451108668   ## QQ
-    # 1449412482  # Reeder 4
+    451108668   # QQ
     1233965871  # ScreenBrush
 )
 
@@ -179,9 +188,6 @@ brew link --overwrite ${runtime_environment[@]} ${sys_pref_tool[@]} \
 brew install --cask ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
     ${version_control_app[@]} ${system_helper_service_app[@]} ${quicklook_plugins[@]} \
     ${dev_utils_app} ${media_entertainment_app[@]} ${office_app[@]} ${adobe[@]} ${gaming[@]}
-
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
 
 mas install ${mas_only_app[@]}
 

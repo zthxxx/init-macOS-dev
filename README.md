@@ -10,14 +10,14 @@ download and install applications for custom
 ## usage
 
 ```bash
-curl -sSL -H 'Cache-Control: no-cache' https://github.com/zthxxx/init-macOS-dev/raw/master/verifier.sh | bash
+curl -sSL -H 'Cache-Control: no-cache' https://github.com/zthxxx/init-macOS-dev/raw/master/installer.sh | bash
 ```
 
 ## Descrption
 
 before use this initialization, you shoule
 
-- make sure you have a fast network environment
+- make sure you have a fast network environment (with proxy in router/date)
 - login your Apple account / iCloud / App Store
 - `sudo xcode-select --install` and reboot
 - make sure your App Store account are purchased with `init-application.sh - ${mas_only_app}`

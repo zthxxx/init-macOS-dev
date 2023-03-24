@@ -8,7 +8,7 @@ set -ex
 # https://ashokgelal.com/2017/01/04/til-iterm-hush-last-login/
 touch ~/.hushlogin
 
-sudo scutil --set HostName MacbookProX
+sudo scutil --set HostName MacbookM2X
 
 # sync docs with iCloud
 sudo rm -rf ~/Documents
@@ -16,14 +16,16 @@ ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Documents
 
 # ssh config
 mkdir -p ~/.ssh/sockets/
-cp ./app-preferences/ssh.conf.template  ~/.ssh/config
+## manully copy .ssh/ from iCloud at first, include config file
+# cp ./app-preferences/ssh.conf.template  ~/.ssh/config
 cp -f ~/Documents/Preferences/ssh-config/*  ~/.ssh/
 chmod 400 ~/.ssh/*_rsa
 chmod 400 ~/.ssh/*.pub
 
 # link airport
 # http://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/
-ln -f -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
+sudo mkdir -p /usr/local/bin
+sudo ln -f -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
 
 preference.dock() {
     # ref: https://sspai.com/post/33493

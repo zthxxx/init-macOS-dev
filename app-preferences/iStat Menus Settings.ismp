@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>build</key>
-	<string>1110</string>
+	<string>1224</string>
 	<key>license</key>
 	<dict>
 		<key>email</key>
@@ -13,6 +13,21 @@
 	</dict>
 	<key>preferences</key>
 	<dict>
+		<key>Battery_MenubarItems</key>
+		<array>
+			<dict>
+				<key>internal</key>
+				<true/>
+				<key>key</key>
+				<string>D860443N1QQK7LNB4</string>
+				<key>name</key>
+				<string>Internal Battery</string>
+				<key>subtype</key>
+				<integer>-1</integer>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+		</array>
 		<key>Battery_MenubarMode</key>
 		<array>
 			<dict>
@@ -51,85 +66,39 @@
 				<key>boot</key>
 				<true/>
 				<key>key</key>
-				<string>451B9FBD-BD03-4D11-95EA-D425AAA43F06</string>
+				<string>4E42DE23-41FA-4FF5-961F-F754B3C19EEA</string>
+				<key>name</key>
+				<string>Macintosh HD</string>
 			</dict>
 		</array>
 		<key>FanControl_Sets</key>
+		<array/>
+		<key>Memory_MenubarMode</key>
 		<array>
 			<dict>
-				<key>model</key>
-				<string>MacBookPro15,1</string>
-				<key>name</key>
-				<string>中</string>
-				<key>speeds</key>
-				<array>
-					<dict>
-						<key>fan</key>
-						<string>F0Ac</string>
-						<key>high</key>
-						<integer>5927</integer>
-						<key>low</key>
-						<integer>2160</integer>
-						<key>percentage</key>
-						<integer>50</integer>
-						<key>speed</key>
-						<real>190510</real>
-					</dict>
-					<dict>
-						<key>fan</key>
-						<string>F1Ac</string>
-						<key>high</key>
-						<integer>5489</integer>
-						<key>low</key>
-						<integer>2000</integer>
-						<key>percentage</key>
-						<integer>50</integer>
-						<key>speed</key>
-						<real>176450</real>
-					</dict>
-				</array>
+				<key>key</key>
+				<string>100</string>
 				<key>uuid</key>
-				<string>D878D842-4080-420A-9D44-C53517BC1423</string>
+				<string>4939459E-E5C5-4586-A396-05EE696BC7F5</string>
 			</dict>
 			<dict>
-				<key>model</key>
-				<string>MacBookPro15,1</string>
-				<key>name</key>
-				<string>高</string>
-				<key>speeds</key>
-				<array>
-					<dict>
-						<key>fan</key>
-						<string>F0Ac</string>
-						<key>high</key>
-						<integer>5927</integer>
-						<key>low</key>
-						<integer>2160</integer>
-						<key>percentage</key>
-						<integer>100</integer>
-						<key>speed</key>
-						<real>378860</real>
-					</dict>
-					<dict>
-						<key>fan</key>
-						<string>F1Ac</string>
-						<key>high</key>
-						<integer>5489</integer>
-						<key>low</key>
-						<integer>2000</integer>
-						<key>percentage</key>
-						<integer>100</integer>
-						<key>speed</key>
-						<real>350900</real>
-					</dict>
-				</array>
+				<key>key</key>
+				<string>1</string>
 				<key>uuid</key>
-				<string>AAB4B525-7D12-4CDF-A385-B87AF4C9D474</string>
+				<string>2F7ACA15-3AB0-4783-8D80-F4D60E75E433</string>
 			</dict>
 		</array>
+		<key>Menubar-DetectedColor</key>
+		<string>0.00 0.00 0.00 0.85</string>
 		<key>Migrated_6.0</key>
 		<true/>
 		<key>Migrated_6.22</key>
+		<true/>
+		<key>Migrated_6.5</key>
+		<true/>
+		<key>Migrated_6.52</key>
+		<true/>
+		<key>Migrated_WeatherProvider</key>
 		<true/>
 		<key>Network_MenubarMode</key>
 		<array>
@@ -225,10 +194,10 @@
 				<key>format</key>
 				<array>
 					<array>
-						<string>MMMMM</string>
-						<string>'月'</string>
-						<string>d</string>
-						<string>'日 '</string>
+						<string>MM</string>
+						<string>'-'</string>
+						<string>dd</string>
+						<string>' '</string>
 						<string>EE</string>
 						<string>' '</string>
 						<string>HH</string>
@@ -241,6 +210,19 @@
 				<integer>1</integer>
 			</dict>
 		</array>
+		<key>Updater_Attempts</key>
+		<dict>
+			<key>1113</key>
+			<string>2</string>
+			<key>1150</key>
+			<string>1</string>
+			<key>1157</key>
+			<string>2</string>
+			<key>1176</key>
+			<string>1</string>
+			<key>1224</key>
+			<string>2</string>
+		</dict>
 		<key>Weather_MenubarMode</key>
 		<array>
 			<dict>
@@ -259,15 +241,14 @@
 		<key>Zarya-TLE</key>
 		<dict>
 			<key>time</key>
-			<real>1566799947.6478891</real>
+			<real>1697392198.2181749</real>
 			<key>tle</key>
 			<string>ISS (ZARYA)             
-1 25544U 98067A   19024.69130787  .00000289  00000-0  11946-4 0  9991
-2 25544  51.6429 354.9058 0004630 308.2748  50.7575 15.53168972152956
-</string>
+1 25544U 98067A   23288.58568016  .00020737  00000+0  36705-3 0  9994
+2 25544  51.6409  92.1688 0004706 105.3820   9.1000 15.50249339420464</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>6.31</string>
+	<string>6.72</string>
 </dict>
 </plist>

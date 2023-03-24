@@ -1,18 +1,45 @@
 #!/usr/bin/env bash
 
+function prepare_homebrew {
+    if command -v brew; then
+        echo "+ Update Homebrew"
+        brew update -v
+        rm -rf "$(brew --cache)"
+    else
+        echo "+ Install Homebrew"
+        # https://github.com/Homebrew/install/tree/master
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+        
+        if [[ ! -f ~/.config/.HomebrewEnvSetupDone ]]; then
+            # `/opt/homebrew/bin/brew` in Apple Silicon device
+            # `/usr/local/bin/brew` in Intel device
+            brew_bin='/opt/homebrew/bin/brew'
+            echo "+ brew bin path: ${brew_bin}"
+            ${brew_bin} shellenv
+            (echo; ${brew_bin} shellenv) >> ~/.zprofile >> ~/.bash_profile
+            eval "$(${brew_bin} shellenv)"
+
+            if command -v brew; then
+                echo "+ Homebrew Installed"
+                mkdir -p ~/.config
+                touch ~/.config/.HomebrewEnvSetupDone
+            else
+                echo "+ [Error] Homebrew or environment variables setup failed, check: https://brew.sh"
+                exit 1
+            fi
+        fi
+    fi
+}
+
+prepare_homebrew
+
+
+####################
+
 set -ex
 
-if command -v brew; then
-    brew update -v
-    rm -rf "$(brew --cache)"
-else
-    # https://github.com/Homebrew/install/tree/master
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
-
-
 workspace="`pwd`"
-# sudo -i sudo -u $USER -i "`pwd`/init.sh" "`pwd`"
+
 if [[ -n $1 ]]; then 
     workspace="$1"
     cd "$workspace"

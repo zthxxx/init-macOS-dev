@@ -5,6 +5,8 @@ set -ex
 # git user setting
 git config --global user.name zthxxx
 git config --global user.email zthxxx.me@gmail.com
+git config --global core.ignorecase false
+git config --global core.quotepath false
 
 # screen config
 curl -sLH 'Cache-Control: no-cache' https://gist.github.com/zthxxx/df7e121048b12c80f260285d88e1091f/raw/.screenrc -o ~/.screenrc
@@ -38,11 +40,19 @@ perl -i -pe "
 
 
 # iTerm2 preference
-defaults import com.googlecode.iterm2 ./app-preferences/iTerm2.plist
+# Save: 
+#   - iTerm2 menu > Preferences > "General" tab > "Preferences" > Load preferences from a custom folder > Save Now
+#     then, change file name to `iTerm2.plist`.
+#     `mv app-preferences/com.googlecode.iterm2.plist app-preferences/iTerm2.plist`
+#   
+#   - iTerm2 menu > Profiles > Localhost > Other Actions > Save Profile As JSON
+
 ## https://iterm2.com/documentation-dynamic-profiles.html
 ## https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
-mkdir -p ~/Library/Application\ Support/iTerm2/DynamicProfiles
-cp ./app-preferences/iTerm2-profile-Localhost.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/Localhost.json
+defaults import com.googlecode.iterm2 ./app-preferences/iTerm2.plist
+## iTerm2 plist 中已经包含所有 profiles
+# mkdir -p ~/Library/Application\ Support/iTerm2/DynamicProfiles
+# cp ./app-preferences/iTerm2-profile-Localhost.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/Localhost.json
 
 ## iTerm2 lrzsz setup
 # https://gist.github.com/zthxxx/9171c12538605d92781b74274ba8b9e1
