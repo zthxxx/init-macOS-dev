@@ -15,6 +15,8 @@ local runtime_environment=(
     ipython
     node
     openssl
+    rust
+    golang
 )
 
 local sys_pref_tool=(
@@ -35,7 +37,6 @@ local terminal_tool=(
     gnu-sed
     terminal-notifier
     source-highlight
-    md5sha1sum
     autojump
     colordiff
     expect
@@ -46,6 +47,8 @@ local terminal_tool=(
     neovim
     smudge/smudge/nightlight
     neofetch
+    onefetch
+    clol
 )
 
 local network_tool=(
@@ -53,7 +56,7 @@ local network_tool=(
     curl
     wget
     aria2
-    lrzsz
+    laggardkernel/tap/iterm2-zmodem
     nginx-full
     telnet
     mosh
@@ -79,7 +82,8 @@ local terminal_app=(
 local network_app=(
     google-chrome
     teamviewer
-    paw
+    rapidapi
+    postman
     wireshark
     netspot
     tailscale
@@ -112,7 +116,6 @@ local system_helper_service_app=(
     istat-menus
     keycastr
     snipaste
-    kap
     ubersicht
     monitorcontrol
     maczip
@@ -123,6 +126,7 @@ local system_helper_service_app=(
     trex
     logitech-options
     homebrew/cask-fonts/font-hack-nerd-font
+    alt-tab
 )
 
 local quicklook_plugins=(
@@ -156,12 +160,15 @@ local adobe=(
 
 local gaming=(
     steam
+    discord
 )
 
 local mas_only_app=(
     836500024   # WeChat
     451108668   # QQ
     1233965871  # ScreenBrush
+    747648890   # Telegram
+    1136220934  # Infuse
 )
 
 local npm_global_app=(
@@ -174,20 +181,23 @@ local npm_global_app=(
     git-split-diffs
     serve
     pm2
-    eloc
+    pnpm
+    yarn
+    @builder.io/ai-shell
+    aicommits
 )
 
 brew tap ${brew_taps[@]}
 
 brew install ${runtime_environment[@]} ${sys_pref_tool[@]} \
-    ${terminal_tools[@]} ${network_tool[@]}
+    ${terminal_tool[@]} ${network_tool[@]}
 
 brew link --overwrite ${runtime_environment[@]} ${sys_pref_tool[@]} \
-    ${terminal_tools[@]} ${network_tool[@]}
+    ${terminal_tool[@]} ${network_tool[@]}
 
 brew install --cask ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
     ${version_control_app[@]} ${system_helper_service_app[@]} ${quicklook_plugins[@]} \
-    ${dev_utils_app} ${media_entertainment_app[@]} ${office_app[@]} ${adobe[@]} ${gaming[@]}
+    ${dev_utils_app} ${media_entertainment_app[@]} ${im_app[@]} ${office_app[@]} ${adobe[@]} ${gaming[@]}
 
 mas install ${mas_only_app[@]}
 

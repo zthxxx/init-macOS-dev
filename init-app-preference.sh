@@ -7,6 +7,7 @@ git config --global user.name zthxxx
 git config --global user.email zthxxx.me@gmail.com
 git config --global core.ignorecase false
 git config --global core.quotepath false
+git config --global pull.ff only
 
 # screen config
 curl -sLH 'Cache-Control: no-cache' https://gist.github.com/zthxxx/df7e121048b12c80f260285d88e1091f/raw/.screenrc -o ~/.screenrc
@@ -58,5 +59,5 @@ defaults import com.googlecode.iterm2 ./app-preferences/iTerm2.plist
 # https://gist.github.com/zthxxx/9171c12538605d92781b74274ba8b9e1
 # https://github.com/laggardkernel/iterm2-zmodem
 # https://github.com/laggardkernel/homebrew-tap/blob/master/Formula/iterm2-zmodem.rb
-brew install laggardkernel/tap/iterm2-zmodem
+brew info laggardkernel/tap/iterm2-zmodem
 open "https://github.com/laggardkernel/homebrew-tap/blob/master/Formula/iterm2-zmodem.rb"
