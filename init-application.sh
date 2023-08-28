@@ -49,6 +49,7 @@ local terminal_tool=(
     neofetch
     onefetch
     clol
+    jless
 )
 
 local network_tool=(
@@ -124,9 +125,11 @@ local system_helper_service_app=(
     oversight
     input-source-pro
     trex
-    logitech-options
+    # replace to logi-options plus  https://www.logitech.com/en-us/software/logi-options-plus.html
+    # logitech-options
     homebrew/cask-fonts/font-hack-nerd-font
     alt-tab
+    mac-mouse-fix
 )
 
 local quicklook_plugins=(
@@ -203,5 +206,37 @@ mas install ${mas_only_app[@]}
 
 npm i -g ${npm_global_app[@]}
 
-# https://github.com/banga/git-split-diffs
+# Git Config
+## https://github.com/banga/git-split-diffs
 git config --global core.pager "git-split-diffs --color | less -RFX"
+git config --global split-diffs.theme-name dark
+
+## Reuse Recorded Resolution in git-rebase
+## https://blog.gitbutler.com/git-tips-1-theres-a-git-config-for-that/#reuse-recorded-resolution
+git config --global rerere.enabled true
+git config --global rerere.autoUpdate true
+
+## https://blog.gitbutler.com/git-tips-2-new-stuff-in-git/#some-git-branch-stuff
+git config --global branch.sort -committerdate
+git config --global column.ui auto
+
+## https://blog.gitbutler.com/git-tips-2-new-stuff-in-git/#safe-force-pushing
+## always using `git push --force-with-lease` instead of `git push --force`
+git config --global alias.pushf push --force-with-lease
+
+## https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html#verify-commits-locally
+### if allowed_signers file not contains public key, append it
+if ! grep -qFf ~/.ssh/zthxxx.ed25519.pub ~/.ssh/allowed_signers 2>/dev/null; then
+  # format of "ALLOWED SIGNERS" section in `ssh-keygen`
+  echo "zthxxx.me@gmail.com $(cat ~/.ssh/zthxxx.ed25519.pub)" >> ~/.ssh/allowed_signers
+fi
+git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
+
+## https://blog.gitbutler.com/git-tips-1-theres-a-git-config-for-that/#conditional-configs
+mkdir -p ~/.config/git
+git config --file ~/.config/git/github user.name zthxxx
+git config --file ~/.config/git/github user.email zthxxx.me@gmail.com
+git config --file ~/.config/git/github user.signingKey ~/.ssh/zthxxx.ed25519
+git config --file ~/.config/git/github commit.gpgsign true
+git config --file ~/.config/git/github gpg.format ssh
+git config --global 'includeIf.hasconfig:remote.*.url:git@github.com:zthxxx/**.path' ~/.config/git/github
