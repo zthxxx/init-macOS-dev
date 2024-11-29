@@ -36,6 +36,11 @@ preference.dock() {
     defaults write com.apple.dock autohide-delay -int 0
     # https://www.defaults-write.com/disable-dashboard-in-mac-os-x
     defaults write com.apple.dashboard mcx-disabled -bool true
+    # System Settings > Desktop & Dock > Scroll down to Mission Control section > Uncheck Automatically rearrange Spaces based on most recent use
+    # https://apple.stackexchange.com/questions/214348/how-to-prevent-mac-from-changing-the-order-of-desktops-spaces
+    defaults write com.apple.dock mru-spaces -bool false
+    # Command + Control + LeftMouseBtn to drag window
+    defaults write -g NSWindowShouldDragOnGesture -bool true
     killall Dock
 }
 

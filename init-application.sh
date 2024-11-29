@@ -2,9 +2,7 @@
 
 set -ex
 
-local brew_taps=(
-    denji/nginx
-)
+
 
 # brew core below
 local runtime_environment=(
@@ -30,6 +28,7 @@ local sys_pref_tool=(
     mackup
     coreutils
     ffmpeg
+    gdu
 )
 
 local terminal_tool=(
@@ -51,15 +50,18 @@ local terminal_tool=(
     onefetch
     clol
     jless
+    lnav
+    librsvg
+    imagemagick
 )
 
 local network_tool=(
     git
+    git-lfs
     curl
     wget
     aria2
     laggardkernel/tap/iterm2-zmodem
-    nginx-full
     telnet
     mosh
     httpie
@@ -68,6 +70,7 @@ local network_tool=(
     netcat
     socat
     iperf3
+    doggo
 )
 
 local im_app=(
@@ -89,6 +92,8 @@ local network_app=(
     wireshark
     netspot
     tailscale
+    # sing-box client
+    sfm
 )
 
 local databse_manager=(
@@ -108,20 +113,17 @@ local version_control_app=(
 
 local dev_utils_app=(
     orbstack
-    kitematic
 )
 
 local system_helper_service_app=(
     raycast
-    hammerspoon
-    # intel-power-gadget
     istat-menus
     keycastr
     snipaste
     ubersicht
     monitorcontrol
     maczip
-    hiddenbar
+    jordanbaird-ice
     wacom-tablet
     oversight
     input-source-pro
@@ -190,8 +192,6 @@ local npm_global_app=(
     @builder.io/ai-shell
     aicommits
 )
-
-brew tap ${brew_taps[@]}
 
 brew install ${runtime_environment[@]} ${sys_pref_tool[@]} \
     ${terminal_tool[@]} ${network_tool[@]}
