@@ -27,7 +27,7 @@ chmod 400 ~/.ssh/*.pub
 sudo mkdir -p /usr/local/bin
 sudo ln -f -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
 
-preference.dock() {
+@preference.dock() {
     # ref: https://sspai.com/post/33493
     defaults write com.apple.dock showhidden -bool true
     defaults write com.apple.dock mineffect suck
@@ -44,14 +44,14 @@ preference.dock() {
     killall Dock
 }
 
-preference.finder() {
+@preference.finder() {
     defaults write com.apple.finder AppleShowAllFiles -bool true
     # ref: https://support.apple.com/en-us/HT1629
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
     killall Finder
 }
 
-specific_UTIs_for_app() {
+@specific_UTIs_for_app() {
     # ref: https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html
     local UTIs_setting_file="specific-UTIs-for-app"
 
@@ -66,7 +66,12 @@ specific_UTIs_for_app() {
     duti "$UTIs_setting_file"
 }
 
+@enable_TouchID_for_sudo() {
+    sudo cp -f /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
+    sudo sed -i -e 's/^# *auth/auth/' /etc/pam.d/sudo_local
+}
 
-preference.dock
-preference.finder
-specific_UTIs_for_app 
+@preference.dock
+@preference.finder
+@specific_UTIs_for_app 
+@enable_TouchID_for_sudo

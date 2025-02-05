@@ -16,6 +16,7 @@ local runtime_environment=(
     openssl
     rust
     golang
+    luarocks
 )
 
 local sys_pref_tool=(
@@ -53,6 +54,7 @@ local terminal_tool=(
     lnav
     librsvg
     imagemagick
+    watch
 )
 
 local network_tool=(
@@ -105,6 +107,7 @@ local editor_IDE_app=(
     visual-studio-code
     webstorm
     pycharm
+    heynote
 )
 
 local version_control_app=(
