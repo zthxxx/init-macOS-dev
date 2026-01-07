@@ -32,21 +32,37 @@ git config --global column.ui auto
 git config --global alias.pushf push --force-with-lease
 
 ## https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html#verify-commits-locally
+touch ~/.ssh/allowed_signers
+git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
 ### if allowed_signers file not contains public key, append it
 if ! grep -qFf ~/.ssh/zthxxx.ed25519.pub ~/.ssh/allowed_signers 2>/dev/null; then
   # format of "ALLOWED SIGNERS" section in `ssh-keygen`
   echo "zthxxx.me@gmail.com $(cat ~/.ssh/zthxxx.ed25519.pub)" >> ~/.ssh/allowed_signers
 fi
-git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
 
 ## https://blog.gitbutler.com/git-tips-1-theres-a-git-config-for-that/#conditional-configs
 mkdir -p ~/.config/git
-git config --file ~/.config/git/github user.name zthxxx
-git config --file ~/.config/git/github user.email zthxxx.me@gmail.com
-git config --file ~/.config/git/github user.signingKey ~/.ssh/zthxxx.ed25519
-git config --file ~/.config/git/github commit.gpgsign true
-git config --file ~/.config/git/github gpg.format ssh
-git config --global 'includeIf.hasconfig:remote.*.url:git@github.com:zthxxx/**.path' ~/.config/git/github
+git config --file ~/.config/git/github.zthxxx user.name zthxxx
+git config --file ~/.config/git/github.zthxxx user.email zthxxx.me@gmail.com
+git config --file ~/.config/git/github.zthxxx user.signingKey '~/.ssh/zthxxx.ed25519'
+git config --file ~/.config/git/github.zthxxx commit.gpgsign true
+git config --file ~/.config/git/github.zthxxx gpg.format ssh
+git config --global 'includeIf.hasconfig:remote.*.url:git@github.com:zthxxx/**.path' '~/.config/git/github.zthxxx'
+
+
+if ! grep -qFf ~/.ssh/zthxxx.claw.ed25519.pub ~/.ssh/allowed_signers 2>/dev/null; then
+  # format of "ALLOWED SIGNERS" section in `ssh-keygen`
+  echo "zthxxx.me@gmail.com $(cat ~/.ssh/zthxxx.claw.ed25519.pub)" >> ~/.ssh/allowed_signers
+fi
+
+git config --file ~/.config/git/github.kachya-claw user.name kachya-claw
+git config --file ~/.config/git/github.kachya-claw user.email zthxxx.me+claw@gmail.com
+git config --file ~/.config/git/github.kachya-claw user.signingKey '~/.ssh/zthxxx.claw.ed25519'
+git config --file ~/.config/git/github.kachya-claw commit.gpgsign true
+git config --file ~/.config/git/github.kachya-claw gpg.format ssh
+git config --file ~/.config/git/github.kachya-claw core.sshCommand 'ssh -i ~/.ssh/zthxxx.claw.ed25519'
+git config --global 'includeIf.hasconfig:remote.*.url:git@github.com:kachya-claw/**.path' '~/.config/git/github.kachya-claw'
+git config --global 'includeIf.gitdir:~/Project/Homelab/Claw/.path' '~/.config/git/github.kachya-claw'
 
 
 # gpg for Git committer for all web commits made on GitHub.com

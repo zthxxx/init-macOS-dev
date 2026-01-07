@@ -13,9 +13,12 @@ local runtime_environment=(
     python
     ipython
     node
+    deno
+    oven-sh/bun/bun
     openssl
     rust
     golang
+    tinygo-org/tools/tinygo
     luarocks
 )
 
@@ -24,6 +27,7 @@ local sys_pref_tool=(
     duti
     tree
     ncdu
+    dua-cli
     pandoc
     mas
     mackup
@@ -55,6 +59,9 @@ local terminal_tool=(
     librsvg
     imagemagick
     watch
+    ripgrep
+    typst
+    trzsz-ssh
 )
 
 local network_tool=(
@@ -103,7 +110,6 @@ local databse_manager=(
 )
 
 local editor_IDE_app=(
-    typora
     visual-studio-code
     webstorm
     pycharm
@@ -135,7 +141,6 @@ local system_helper_service_app=(
     # logitech-options
     homebrew/cask-fonts/font-hack-nerd-font
     alt-tab
-    mac-mouse-fix
 )
 
 local quicklook_plugins=(
@@ -159,7 +164,16 @@ local office_app=(
     microsoft-office
 )
 
-local adobe=(
+local ai_cli=(
+    claude-code
+    gemini-cli
+)
+
+local ai_app=(
+    codex
+)
+
+local design_app=(
     # adobe-creative-cloud
     sketch
     figma
@@ -172,28 +186,36 @@ local gaming=(
     discord
 )
 
-local mas_only_app=(
-    836500024   # WeChat
+local mas_app_cn=(
+    836500024   # WeChat         
     451108668   # QQ
-    1233965871  # ScreenBrush
+    1449962996  # 腾讯柠檬清理(Lite) (CN)
+)
+
+local mas_app_en=(
+    1500855883  # CapCut
+    1233965871  # ScreenBrush   
     747648890   # Telegram
     1136220934  # Infuse
 )
 
 local npm_global_app=(
     node-gyp
-    nodemon
-    esm
     typescript
     ts-node
     tsx
+    zx
+    @typescript/native-preview
     git-split-diffs
     serve
     pm2
-    pnpm
-    yarn
-    @builder.io/ai-shell
-    aicommits
+    svgo
+    esbuild
+    vercel
+    dependency-cruiser
+    depcheck
+    @eslint/config-inspector
+    @ast-grep/cli
 )
 
 brew install ${runtime_environment[@]} ${sys_pref_tool[@]} \
@@ -204,8 +226,13 @@ brew link --overwrite ${runtime_environment[@]} ${sys_pref_tool[@]} \
 
 brew install --cask ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
     ${version_control_app[@]} ${system_helper_service_app[@]} ${quicklook_plugins[@]} \
-    ${dev_utils_app} ${media_entertainment_app[@]} ${im_app[@]} ${office_app[@]} ${adobe[@]} ${gaming[@]}
+    ${dev_utils_app} ${media_entertainment_app[@]} ${im_app[@]} ${office_app[@]} ${design_app[@]} ${ai_app[@]} ${gaming[@]}
 
-mas install ${mas_only_app[@]}
+mas install ${mas_app_cn[@]}
 
-npm i -g ${npm_global_app[@]}
+## need manually switch App Store Account
+# mas install ${mas_app_en[@]}
+
+npm install --global pnpm yarn
+
+pnpm install --global ${npm_global_app[@]}

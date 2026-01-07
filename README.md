@@ -30,6 +30,8 @@ before use this initialization, you shoule
 
 - https://sxyz.blog/macos-setup
 
+- https://github.com/nodewee/Typing-faster-on-macOS
+
 ## Author
 
 **SSlaunch.sh** © [zthxxx](https://github.com/zthxxx), Released under the **[MIT](./LICENSE)** License.<br>
