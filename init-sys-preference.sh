@@ -8,7 +8,7 @@ set -ex
 # https://ashokgelal.com/2017/01/04/til-iterm-hush-last-login/
 touch ~/.hushlogin
 
-sudo scutil --set HostName MacbookM2X
+# sudo scutil --set HostName MacbookM2X
 
 # sync docs with iCloud
 sudo rm -rf ~/Documents
@@ -18,14 +18,15 @@ ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents ~/Documents
 mkdir -p ~/.ssh/sockets/
 ## manully copy .ssh/ from iCloud at first, include config file
 # cp ./app-preferences/ssh.conf.template  ~/.ssh/config
-cp -f ~/Documents/Preferences/ssh-config/*  ~/.ssh/
+# cp -f ~/Documents/Preferences/ssh-config/*  ~/.ssh/
 chmod 400 ~/.ssh/*_rsa
+chmod 400 ~/.ssh/*ed25519
 chmod 400 ~/.ssh/*.pub
 
 # link airport
 # http://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/
 sudo mkdir -p /usr/local/bin
-sudo ln -f -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
+# sudo ln -f -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
 
 @preference.dock() {
     # ref: https://sspai.com/post/33493
@@ -56,7 +57,6 @@ sudo ln -f -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Cu
     local UTIs_setting_file="specific-UTIs-for-app"
 
     local UTI_VSCode=`osascript -e 'id of app "Visual Studio Code"'`
-    local UTI_Typora=`osascript -e 'id of app "Typora"'`
     local UTI_NeteaseMusic=`osascript -e 'id of app "NeteaseMusic"'`
     local UTI_IINA=`osascript -e 'id of app "IINA"'`
     local UTI_Chrome=`osascript -e 'id of app "Google Chrome"'`
@@ -74,4 +74,4 @@ sudo ln -f -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Cu
 @preference.dock
 @preference.finder
 @specific_UTIs_for_app 
-@enable_TouchID_for_sudo
+# @enable_TouchID_for_sudo

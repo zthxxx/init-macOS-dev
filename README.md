@@ -11,6 +11,9 @@ download and install applications for custom
 
 ```bash
 curl -sSL -H 'Cache-Control: no-cache' https://github.com/zthxxx/init-macOS-dev/raw/master/installer.sh | bash
+
+
+git clone git@github.com:zthxxx/init-macOS-dev.git ~/Downloads/init-macOS-dev
 ```
 
 ## Descrption

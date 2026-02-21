@@ -7,7 +7,7 @@ ${UTI_VSCode}			com.apple.property-list			all
 ${UTI_VSCode}			public.delimited-values-text	all
 ${UTI_VSCode}			conf							all
 ${UTI_VSCode}			cfg								all
-${UTI_Typora}			net.daringfireball.markdown		all
+${UTI_VSCode}			net.daringfireball.markdown		all
 ${UTI_NeteaseMusic}		public.audio					all
 ${UTI_NeteaseMusic}		public.mp3						all
 ${UTI_IINA}				public.audiovisual-content		all

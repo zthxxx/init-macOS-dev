@@ -3,6 +3,7 @@
 set -ex
 
 # Git Config
+git config --global init.defaultBranch main
 git config --global user.name zthxxx
 git config --global user.email zthxxx.me@gmail.com
 git config --global core.ignorecase false
@@ -60,7 +61,7 @@ git config --file ~/.config/git/github.kachya-claw user.email zthxxx.me+claw@gma
 git config --file ~/.config/git/github.kachya-claw user.signingKey '~/.ssh/zthxxx.claw.ed25519'
 git config --file ~/.config/git/github.kachya-claw commit.gpgsign true
 git config --file ~/.config/git/github.kachya-claw gpg.format ssh
-git config --file ~/.config/git/github.kachya-claw core.sshCommand 'ssh -i ~/.ssh/zthxxx.claw.ed25519'
+git config --file ~/.config/git/github.kachya-claw core.sshCommand 'ssh -o IdentitiesOnly=yes -i ~/.ssh/zthxxx.claw.ed25519'
 git config --global 'includeIf.hasconfig:remote.*.url:git@github.com:kachya-claw/**.path' '~/.config/git/github.kachya-claw'
 git config --global 'includeIf.gitdir:~/Project/Homelab/Claw/.path' '~/.config/git/github.kachya-claw'
 
@@ -68,9 +69,10 @@ git config --global 'includeIf.gitdir:~/Project/Homelab/Claw/.path' '~/.config/g
 # gpg for Git committer for all web commits made on GitHub.com
 curl -sS https://github.com/web-flow.gpg | gpg --import
 
-# screen & tmux config
-curl -sLH 'Cache-Control: no-cache' https://gist.github.com/zthxxx/df7e121048b12c80f260285d88e1091f/raw/.screenrc -o ~/.screenrc
-curl -sLH 'Cache-Control: no-cache' https://gist.github.com/zthxxx/bbbb37c100254d688236c21e8b977b85/raw/.tmux.conf -o ~/.tmux.conf
+# # screen & tmux config
+# https://github.com/zthxxx/tmux-config
+# curl -sLH 'Cache-Control: no-cache' https://gist.github.com/zthxxx/df7e121048b12c80f260285d88e1091f/raw/.screenrc -o ~/.screenrc
+# curl -sLH 'Cache-Control: no-cache' https://gist.github.com/zthxxx/bbbb37c100254d688236c21e8b977b85/raw/.tmux.conf -o ~/.tmux.conf
 
 
 # mackup setting: https://github.com/lra/mackup/blob/master/doc/README.md#icloud

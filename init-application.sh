@@ -42,7 +42,7 @@ local terminal_tool=(
     gnu-sed
     terminal-notifier
     source-highlight
-    autojump
+    zoxide
     colordiff
     expect
     zsh
@@ -50,16 +50,15 @@ local terminal_tool=(
     ranger
     lazygit
     neovim
-    smudge/smudge/nightlight
-    neofetch
-    onefetch
-    clol
+    tokei
     jless
     lnav
     librsvg
     imagemagick
     watch
     ripgrep
+    fzf
+    fd
     typst
     trzsz-ssh
 )
@@ -72,7 +71,6 @@ local network_tool=(
     aria2
     laggardkernel/tap/iterm2-zmodem
     telnet
-    mosh
     httpie
     rs/tap/curlie
     iproute2mac
@@ -91,6 +89,7 @@ local im_app=(
 local terminal_app=(
     iterm2
     warp
+    ghostty
 )
 
 local network_app=(
@@ -112,12 +111,7 @@ local databse_manager=(
 local editor_IDE_app=(
     visual-studio-code
     webstorm
-    pycharm
     heynote
-)
-
-local version_control_app=(
-    fork
 )
 
 local dev_utils_app=(
@@ -143,16 +137,6 @@ local system_helper_service_app=(
     alt-tab
 )
 
-local quicklook_plugins=(
-    qlvideo
-    qlstephen
-    qlmarkdown
-    qlcolorcode
-    qlprettypatch
-    quicklook-csv
-    webpquicklook
-    quicklook-json
-)
 
 local media_entertainment_app=(
     neteasemusic
@@ -161,11 +145,10 @@ local media_entertainment_app=(
 
 local office_app=(
     obsidian
-    microsoft-office
+    wpsoffice
 )
 
 local ai_cli=(
-    claude-code
     gemini-cli
 )
 
@@ -174,8 +157,6 @@ local ai_app=(
 )
 
 local design_app=(
-    # adobe-creative-cloud
-    sketch
     figma
     spline
     blender
@@ -225,7 +206,7 @@ brew link --overwrite ${runtime_environment[@]} ${sys_pref_tool[@]} \
     ${terminal_tool[@]} ${network_tool[@]}
 
 brew install --cask ${databse_manager[@]} ${terminal_app[@]} ${network_app[@]} ${editor_IDE_app[@]} \
-    ${version_control_app[@]} ${system_helper_service_app[@]} ${quicklook_plugins[@]} \
+    ${system_helper_service_app[@]} \
     ${dev_utils_app} ${media_entertainment_app[@]} ${im_app[@]} ${office_app[@]} ${design_app[@]} ${ai_app[@]} ${gaming[@]}
 
 mas install ${mas_app_cn[@]}
